@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { CategoryCardComponent } from './components/category-card/category-card.component';
+import { PerstaCardComponent } from './persta-card/persta-card.component';
 
 
 
@@ -10,6 +11,7 @@ import { CategoryCardComponent } from './components/category-card/category-card.
   declarations: [
     HomeComponent,
     CategoryCardComponent,
+    PerstaCardComponent,
 
   ],
   imports: [
