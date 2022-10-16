@@ -19,7 +19,7 @@ export class CategoryCardComponent implements OnInit {
       next: (result) => {
         this.categories = result['object']
         this.children= this.categories.filter((category) => category.parentId === this.category.id)
-        console.log('children categoryCard',this.children);
+        // console.log('children categoryCard',this.children);
         if(this.children.length>4){
           this.children = this.children.slice(0,4)
         }
