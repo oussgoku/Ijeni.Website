@@ -1871,7 +1871,7 @@ nav a {
 }
 
 .nav-logo>img {
-    height: 48px;
+    height: 100px;
     margin: 11px auto;
     padding: 0 15px;
     float: left
@@ -1892,7 +1892,7 @@ nav a:hover {
 }
 
 .navigation-portrait .nav-logo>img {
-    height: 36px;
+    height: 100px;
     margin: 6px auto 6px 15px;
     padding: 0
 }
