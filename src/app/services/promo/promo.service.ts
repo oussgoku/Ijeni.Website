@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class PromoService {
   apiUrl: string = environment.apiUrl
   constructor(private http: HttpClient) { }
-  getLasPromo(){
+  getLastPromos(){
     return this.http.get(`${this.apiUrl}/api/Promo/Trend`)
   }
   getPromoByCategoryId(categoryId){

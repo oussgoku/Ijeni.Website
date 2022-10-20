@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerstaCardComponent } from './persta-card.component';
+import { PrestaCardComponent } from './presta-card.component';
 
-describe('PerstaCardComponent', () => {
-  let component: PerstaCardComponent;
-  let fixture: ComponentFixture<PerstaCardComponent>;
+describe('PrestaCardComponent', () => {
+  let component: PrestaCardComponent;
+  let fixture: ComponentFixture<PrestaCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PerstaCardComponent ]
+      declarations: [ PrestaCardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PerstaCardComponent);
+    fixture = TestBed.createComponent(PrestaCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

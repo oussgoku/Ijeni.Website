@@ -11,4 +11,8 @@ apiUrl = environment.apiUrl;
   getProviders(){
     return this.http.get(`${this.apiUrl}`)
   }
+
+  getProvidersByCategoryId(categoryId : Number){
+    return this.http.get(`${this.apiUrl}/api/FindProvider/FindProviderByCategory/${categoryId}`);
+  }
 }

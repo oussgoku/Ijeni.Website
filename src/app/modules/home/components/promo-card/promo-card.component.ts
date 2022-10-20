@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/services/category/category.service';
+import { PromoService } from 'src/app/services/promo/promo.service';
 
 @Component({
   selector: 'app-promo-card',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromoCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() promo?
+  categories
+  category
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+  //  this.categoryService.getCategories().subscribe({
+  //   next:(result)=>{
+  //     this.categories=result['object']
+
+  //     this.category = this.categories.find((categorie)=>categorie.id==this.promo.promoServiceCategoryId)
+      
+      
+  //   }
+    
+  //  })
+  //  console.log(this.category);
+
   }
 
 }
