@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PrestaCardComponent } from './components/presta-card/presta-card.component';
 import { CategoryCardComponent } from './components/category-card/category-card.component';
+import { PromoCardComponent } from './components/promo-card/promo-card.component';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { CategoryCardComponent } from './components/category-card/category-card.
     FooterComponent,
     PrestaCardComponent,
     CategoryCardComponent,
+    PromoCardComponent,
     
   ],
   imports: [
@@ -20,7 +22,8 @@ import { CategoryCardComponent } from './components/category-card/category-card.
     HeaderComponent,
     FooterComponent,
     PrestaCardComponent,
-    CategoryCardComponent
+    CategoryCardComponent,
+    PromoCardComponent,
   ]
 
 })
