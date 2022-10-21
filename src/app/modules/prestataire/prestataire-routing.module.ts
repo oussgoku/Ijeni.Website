@@ -10,7 +10,7 @@ const routes: Routes = [
     component:PrestalistComponent,
   },
   {
-    path: ':id',
+    path: ':prestaId',
     component:PrestaprofileComponent,
   },
 
