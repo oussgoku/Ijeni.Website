@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerstaCardComponent } from './persta-card.component';
+import { PromosComponent } from './promos.component';
 
-describe('PerstaCardComponent', () => {
-  let component: PerstaCardComponent;
-  let fixture: ComponentFixture<PerstaCardComponent>;
+describe('PromosComponent', () => {
+  let component: PromosComponent;
+  let fixture: ComponentFixture<PromosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PerstaCardComponent ]
+      declarations: [ PromosComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PerstaCardComponent);
+    fixture = TestBed.createComponent(PromosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

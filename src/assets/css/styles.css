@@ -6248,7 +6248,7 @@ footer.skin-dark-footer ul.footer-bottom-social li a:focus {
     }
 
     a.nav-brand.static-logo {
-        display: none;
+        display: block;
     }
 
     #countdown ul li span {

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { CategoryService } from 'src/app/services/category/category.service';
 import { PromoService } from 'src/app/services/promo/promo.service';
 import { Category } from 'src/app/shared/models/category';
-
+import { keywords } from 'src/app/shared/const';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,34 +14,32 @@ export class HomeComponent implements OnInit {
   Parents: Category[] = [];
   lastPromos = [];
   promoLoaded:boolean = false;
-  constructor(private categoryService: CategoryService, private promoService: PromoService) {
-
+  constructor(private categoryService: CategoryService, private promoService: PromoService,private title:Title,private meta:Meta) {
   }
 
   ngOnInit(): void {
+
+    this.title.setTitle(keywords.TITLE)
+    this.meta.addTag({name:"description",content:keywords.DESCRIPTION})
+
     this.categoryService.getCategories().subscribe({
       next: (result) => {
-        console.log('Categories:', result['object']);
         this.Categories = result['object']
         this.Parents = this.Categories.filter((categorie) => {
+
           return categorie.parentId == null || categorie.parentId == 0
+          
         })
-        console.log('Parents:', this.Parents);
-
-        console.log(this.Categories);
-
-
       },
       error: (error) => {
         console.log('error while fetching categories', error);
-
       }
     })
+
     // Last Promos !
     this.promoService.getLastPromos().subscribe({
       next: (result) => {
         this.lastPromos = result['object']
-        console.log('last Promos', this.lastPromos);
         this.promoLoaded = true
 
       },
