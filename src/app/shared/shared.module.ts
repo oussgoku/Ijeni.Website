@@ -26,6 +26,7 @@ import { RouterModule } from '@angular/router';
     PrestaCardComponent,
     CategoryCardComponent,
     PromoCardComponent,
+    
   ]
 
 })

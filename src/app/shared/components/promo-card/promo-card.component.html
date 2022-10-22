@@ -2,12 +2,12 @@
 <div class="blg_grid_box" *ngIf="promo">
     <div class="blg_grid_thumb">
         <a [routerLink]="['/promo',promo.id]"><img [src]="promo.coverPicture" class="img-fluid"
-                style="width:350px; height:250px" alt=""></a>
+                style="width:350px; height:250px" alt="{{promo.promoName}}"></a>
     </div>
     <div class="blg_grid_caption">
         <!-- <div class="blg_tag"><span>{{category.name=='' ? 'oussema':category.name}}</span></div> -->
         <div class="blg_title">
-            <h4><a [routerLink]="['/promo',promo.id]">{{promo.promoName}}</a></h4>
+            <h4><a [routerLink]="['/promo',promo.id]" >{{promo.promoName}}</a></h4>
         </div>
         <div class="blg_desc">
             <p>{{promo.fullAddress}}</p>

@@ -9,6 +9,7 @@ import { ProviderService } from 'src/app/services/provider/provider.service';
 })
 export class PrestalistComponent implements OnInit {
 
+  grid = true;
   constructor(private route: ActivatedRoute, private providerService: ProviderService) { }
   providers = []
   ngOnInit(): void {
@@ -24,6 +25,10 @@ export class PrestalistComponent implements OnInit {
       }
     })
     });
+  }
+
+  change(state:boolean){
+    this.grid = state
   }
 
 }
