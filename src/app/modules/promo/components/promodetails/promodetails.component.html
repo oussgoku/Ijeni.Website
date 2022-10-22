@@ -102,8 +102,7 @@
 								<li><a href="#"><span class="icons"><i
 												class="ti-user"></i></span>{{promo.providerName}}</a>
 								</li>
-								<li><a [routerLink]="['/prestataire',promo.providerId]"><span class="icons"><i
-												class="ti-comment-alt"></i></span>{{promo.createdDate | date}}</a></li>
+								<li><a [routerLink]="['/prestataire',promo.providerId]"><span class="icons"><i class="ti-calendar"></i></span>{{promo.createdDate | date}}</a></li>
 							</ul>
 						</div>
 						<h2 class="post-title">Description:</h2>
@@ -116,7 +115,7 @@
 
 
 				<!-- Blog Comment -->
-				<div class="article_detail_wrapss single_article_wrap format-standard">
+				<!-- <div class="article_detail_wrapss single_article_wrap format-standard">
 
 					<div class="comment-area">
 						<div class="all-comments">
@@ -262,7 +261,7 @@
 						</div>
 					</div>
 
-				</div>
+				</div> -->
 
 
 			</div>
@@ -273,8 +272,7 @@
 				<div class="article_detail_wrapss single_article_wrap format-standard">
 
 					<div class="article_posts_thumb">
-						<span class="img"><img class="img-fluid" [src]="promo.providerPictureURI"
-								alt=""></span>
+						<span class="img"><img class="img-fluid" [src]="promo.providerPictureURI" alt=""></span>
 						<h3 class="pa-name">{{promo.providerName}}</h3>
 						<ul>
 							<!-- <ngb-rating [max]="5" [(rate)]="promo.rating" [readonly]="false"></ngb-rating> -->
@@ -293,71 +291,37 @@
 
 				<!-- Categories -->
 				<div class="single_widgets widget_category">
-					<h4 class="title">Categories</h4>
+					<h4 class="title">Contact Me !</h4>
 					<ul>
-						<li><a href="#">Lifestyle <span>09</span></a></li>
-						<li><a href="#">Travel <span>12</span></a></li>
-						<li><a href="#">Fashion <span>19</span></a>
+						<li><a>Numéro de téléphone<span>{{promo.providerPhoneNumber}}</span></a></li>
+						<li><a >Adresse <span>{{promo.fullAddress}}</span></a></li>
+						<!-- <li><a href="#">Fashion <span>19</span></a>
 						</li>
 						<li><a href="#">Branding <span>17</span></a></li>
-						<li><a href="#">Music <span>10</span></a></li>
+						<li><a href="#">Music <span>10</span></a></li> -->
 					</ul>
 				</div>
 
 				<!-- Trending Posts -->
 				<div class="single_widgets widget_thumb_post">
-					<h4 class="title">Trending Posts</h4>
-					<ul>
+					<h4 class="title">Other Promos</h4>
+					<ul *ngFor="let other of promo.otherPromos">
 						<li>
 							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
+								<img [src]="other.coverPicture" alt="{{other.promoName}}" class="">
 							</span>
 							<span class="right">
-								<a class="feed-title" href="#">Alonso Kelina Falao Asiano Pero</a>
-								<span class="post-date"><i class="ti-calendar"></i>10 Min ago</span>
+								<a class="feed-title" (click)="ChangeRoute(other.id)">{{other.promoName}}</a>
+								<span class="post-date"><i class="ti-calendar"></i>{{other.createdDate | date}}</span>
+								<span class="post-date" style="color:green;">{{other.regularPrice }} Dt</span>
 							</span>
 						</li>
-						<li>
-							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
-							</span>
-							<span class="right">
-								<a class="feed-title" href="#">It is a long established fact that a reader</a>
-								<span class="post-date"><i class="ti-calendar"></i>2 Hours ago</span>
-							</span>
-						</li>
-						<li>
-							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
-							</span>
-							<span class="right">
-								<a class="feed-title" href="#">Many desktop publish packages and web</a>
-								<span class="post-date"><i class="ti-calendar"></i>4 Hours ago</span>
-							</span>
-						</li>
-						<li>
-							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
-							</span>
-							<span class="right">
-								<a class="feed-title" href="#">Various versions have evolved over the years</a>
-								<span class="post-date"><i class="ti-calendar"></i>7 Hours ago</span>
-							</span>
-						</li>
-						<li>
-							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
-							</span>
-							<span class="right">
-								<a class="feed-title" href="#">Photo booth anim 8-bit PBR 3 wolf moon.</a>
-								<span class="post-date"><i class="ti-calendar"></i>3 Days ago</span>
-							</span>
-						</li>
+						
 					</ul>
 				</div>
 
 				<!-- Tags Cloud -->
-				<div class="single_widgets widget_tags">
+				<!-- <div class="single_widgets widget_tags">
 					<h4 class="title">Tags Cloud</h4>
 					<ul>
 						<li><a href="#">Lifestyle</a></li>
@@ -366,7 +330,7 @@
 						<li><a href="#">Branding</a></li>
 						<li><a href="#">Music</a></li>
 					</ul>
-				</div>
+				</div> -->
 
 			</div>
 
