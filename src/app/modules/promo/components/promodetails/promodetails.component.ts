@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PromoService } from 'src/app/services/promo/promo.service';
 
 @Component({
   selector: 'app-promodetails',
   templateUrl: './promodetails.component.html',
-  styleUrls: ['./promodetails.component.scss']
+  styleUrls: ['./promodetails.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class PromodetailsComponent implements OnInit {
 public id:string
