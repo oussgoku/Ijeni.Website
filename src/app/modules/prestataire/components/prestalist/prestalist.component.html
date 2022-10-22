@@ -1,5 +1,5 @@
 			<!-- ======================= Top Breadcrubms ======================== -->
-			<div class="bg-title py-5" data-overlay="0">
+<!-- 			<div class="bg-title py-5" data-overlay="0">
 				<div class="ht-30"></div>
 				<div class="container">
 					<div class="row">
@@ -7,8 +7,8 @@
 							<h1 class="ft-medium">Browse Resumes</h1>
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="#" class="text-light">Home</a></li>
-									<li class="breadcrumb-item"><a href="#" class="text-light">Job</a></li>
+									<li class="breadcrumb-item"><a  class="text-light">Home</a></li>
+									<li class="breadcrumb-item"><a  class="text-light">Job</a></li>
 									<li class="breadcrumb-item active theme-cl" aria-current="page">Browse Candidates</li>
 								</ol>
 							</nav>
@@ -16,8 +16,46 @@
 					</div>
 				</div>
 				<div class="ht-30"></div>
-			</div>
+			</div> -->
 			<!-- ======================= Top Breadcrubms ======================== -->
+						<!-- ======================= Searchbar Banner ======================== -->
+						<div class="py-3 theme-bg searchingBar">
+							<div class="container">
+								<div class="row justify-content-between align-items-center">
+									<div class="col-xl-7 col-lg-9 col-md-9 col-sm-12 col-12">							
+										<form class="bg-white rounded p-1 border">
+											<div class="row no-gutters">
+												<div class="col-xl-6 col-lg-5 col-md-5 col-sm-12 col-12">
+													<div class="form-group mb-0 position-relative">
+														<input type="text" class="form-control sm left-ico" placeholder="Job Title, Keyword or Company" />
+														<i class="bnc-ico lni lni-search-alt"></i>
+													</div>
+												</div>
+												<div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+													<div class="form-group mb-0 position-relative">
+														<input type="text" class="form-control sm left-ico" placeholder="Location or Zip Code" />
+														<i class="bnc-ico lni lni-target"></i>
+													</div>
+												</div>
+												<div class="col-xl-1 col-lg-2 col-md-2 col-sm-12 col-12">
+													<div class="form-group mb-0 position-relative">
+														<button class="btn full-width custom-height sm rounded bg-dark text-white fs-md" type="button">Go</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									
+									<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+										<div class="d-block position-relative text-right">
+											<a href="#" onclick="openSearch()" class="mlb-btn btn ft-medium rounded text-dark bg-light"><i class="ti-bell mr-1"></i>Job Alert</a>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<!-- ======================= Searchbar Banner ======================== -->
 			
 			<!-- ============================ Main Section Start ================================== -->
 			<section class="bg-light">
@@ -33,7 +71,7 @@
 								<div class="col-xl-12 col-lg-12 col-md-12 col-12">
 									<div class="row align-items-center justify-content-between mx-0 bg-white rounded py-2 mb-4">
 										<div class="col-xl-3 col-lg-4 col-md-5 col-sm-12">
-											<h6 class="mb-0 ft-medium fs-sm">302 New Jobs Found</h6>
+											<h6 class="mb-0 ft-medium fs-sm">{{providers.length}} Prestataires disponibles</h6>
 										</div>
 										
 										<div class="col-xl-9 col-lg-8 col-md-7 col-sm-12">
@@ -48,8 +86,8 @@
 													</select>
 												</div>
 												<div class="single_fitres">
-													<a href="browse-resumes.html" class="simple-button active theme-cl mr-1"><i class="ti-layout-grid2"></i></a>
-													<a href="browse-resumes-list.html" class="simple-button"><i class="ti-view-list"></i></a>
+													<a [ngClass]="{'activated': grid, 'desactivated': !grid}" class="simple-button active theme-cl mr-1" (click)="change(true)"><i class="ti-layout-grid2"></i></a>
+													<a [ngClass]="{'activated': !grid}"  class="simple-button" (click)="change(false)"><i class="ti-view-list"></i></a>
 												</div>
 											</div>
 										</div>
@@ -60,27 +98,25 @@
 							<!-- row -->
 							<div class="row align-items-center">		
 								<!-- Single -->
-								<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" *ngFor="let provider of providers">
+								<div [ngClass]="{'col-lg-3': grid, 'col-lg-12': !grid }" class="col-md-6 col-sm-12" *ngFor="let provider of providers">
 									<div class="job_grid border rounded ">
-										<div class="position-absolute ab-left"><button type="button" class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray"><i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button></div>
-										<div class="job_grid_thumbmb-2 text-center pt-4 px-3 mb-2">
-											<a href="candidate-detail.html" class="d-inline-flex text-center m-auto circle border p-2"><img src="{{provider.pictureURI}}" style="width:70px!important;height:70px;border-radius: 50%;" class="" width="70" alt="{{provider.name}} image" /></a>
+<!-- 										<div class="position-absolute ab-left"><button type="button" class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray"><i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button></div>
+ -->										<div class="job_grid_thumbmb-2 text-center pt-4 px-3 mb-2">
+											<a  class="d-inline-flex text-center m-auto circle border p-2"><img src="{{provider.pictureURI}}" style="width:70px!important;height:70px;border-radius: 50%;" class="" width="70" alt="{{provider.name}} image" /></a>
 										</div>
 										<div class="job_grid_caption text-center pb-3 px-3">
-											<h4 class="mb-0 ft-medium medium"><a href="candidate-detail.html" class="text-dark fs-md">{{provider.name}}</a></h4>
-											<div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span></div>
+											<h4 class="mb-0 ft-medium medium"><a class="text-dark fs-md" [routerLink]="['/prestataire',provider.id]">{{provider.name}}</a></h4>
 										</div>
 										<div class="job_grid_footer px-3">
 											<ul class="p-0 skills_tag text-center">
-												<li><span class="px-2 py-1 medium skill-bg rounded text-dark">Joomla</span></li>
-												<li><span class="px-2 py-1 medium skill-bg rounded text-dark">WordPress</span></li>
-												<li><span class="px-2 py-1 medium skill-bg rounded text-dark">PHP</span></li>
-												<li><span class="px-2 py-1 medium skill-bg rounded text-dark">HTML5</span></li>
-												<li><span class="px-2 py-1 medium bg-danger rounded text-light">+3 More</span></li>
+												<li><span class="px-2 py-1 medium skill-bg rounded text-dark"><i *ngIf="provider.isIdentityVerified" class="fa fa-check text-success"></i><i *ngIf="!provider.isIdentityVerified" class="fa fa-times-circle text-danger" aria-hidden="true"></i> Verifié</span></li>
+												<li><span class="px-2 py-1 medium skill-bg rounded text-dark"><i *ngIf="provider.isCertified" class="fa fa-check text-success"></i><i *ngIf="!provider.isCertified" class="fa fa-times-circle text-danger" aria-hidden="true"></i> Certifié</span></li>
+												
+												<li><span class="px-2 py-1 medium rounded text-light" style="background-color: #FFCC09;"><i class="fas fa-star"></i>{{provider.rate | number: '1.0-0'}}</span></li>
 											</ul>
 										</div>
 										<div class="job_grid_footer pb-4 px-3">
-											<div class="df-1 text-dark ft-medium col-12 mt-3"><a href="candidate-detail.html" class="btn gray apply-btn rounded full-width">View Candidate<i class="lni lni-arrow-right-circle ml-1"></i></a></div>
+											<div class="df-1 text-dark ft-medium col-12 mt-3"><a  class="btn gray apply-btn rounded full-width" [routerLink]="['/prestataire',provider.id]" >View Candidate<i class="lni lni-arrow-right-circle ml-1"></i></a></div>
 										</div>
 									</div>
 								</div>
@@ -88,31 +124,7 @@
 								
 								
 							</div>
-							<!-- row -->
-							
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12">
-									<ul class="pagination">
-										<li class="page-item">
-										  <a class="page-link" href="#" aria-label="Previous">
-											<span class="fas fa-arrow-circle-right"></span>
-											<span class="sr-only">Previous</span>
-										  </a>
-										</li>
-										<li class="page-item"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item active"><a class="page-link" href="#">3</a></li>
-										<li class="page-item"><a class="page-link" href="#">...</a></li>
-										<li class="page-item"><a class="page-link" href="#">18</a></li>
-										<li class="page-item">
-										  <a class="page-link" href="#" aria-label="Next">
-											<span class="fas fa-arrow-circle-right"></span>
-											<span class="sr-only">Next</span>
-										  </a>
-										</li>
-									</ul>
-								</div>
-							</div>
+
 							
 						</div>
 						

@@ -13,7 +13,7 @@ export class SubcategoryComponent implements OnInit {
   subcategories = []
   categoryId
   constructor(private categoryService: CategoryService, private route: ActivatedRoute) { }
-  
+  grid = true
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
       this.categoryId = params.get("categoryId")
@@ -33,6 +33,10 @@ export class SubcategoryComponent implements OnInit {
     })
 
 
+
+  }
+  change(state:boolean){
+    this.grid = state
   }
 
 }
