@@ -272,7 +272,7 @@
 				<div class="article_detail_wrapss single_article_wrap format-standard">
 
 					<div class="article_posts_thumb">
-						<span class="img"><img class="img-fluid" [src]="promo.providerPictureURI" alt=""></span>
+						<span class="img"><img class="img-fluid" [src]="promo.providerPictureURI" alt="{{promo.providerName}}"></span>
 						<h3 class="pa-name">{{promo.providerName}}</h3>
 						<ul>
 							<ngb-rating [max]="5" [(rate)]="promo.rating" [readonly]="true"></ngb-rating>
