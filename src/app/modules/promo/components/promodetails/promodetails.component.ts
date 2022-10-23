@@ -1,5 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PromoService } from 'src/app/services/promo/promo.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class PromodetailsComponent implements OnInit {
 public id:string
 promo
 images
-  constructor(private promoService:PromoService, private activatedRoute:ActivatedRoute) { }
+  constructor(private promoService:PromoService, private activatedRoute:ActivatedRoute, private router:Router, private location:Location) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((param)=>{
@@ -29,6 +30,9 @@ images
         console.log('error while fetching promo', err)
       }
     })
+  }
+  ChangeRoute(id){
+    this.router.navigateByUrl(`/promo/${id}`)
   }
 
 }
