@@ -16,6 +16,7 @@ import { PromodetailsComponent } from './components/promodetails/promodetails.co
     CommonModule,
     PromoRoutingModule,
     SharedModule,
+
   ]
 })
 export class PromoModule { }
