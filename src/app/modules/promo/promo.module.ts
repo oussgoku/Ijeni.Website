@@ -4,6 +4,7 @@ import { PromosComponent } from './components/promos/promos.component';
 import { PromoRoutingModule } from './promo-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PromodetailsComponent } from './components/promodetails/promodetails.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { PromodetailsComponent } from './components/promodetails/promodetails.co
   imports: [
     CommonModule,
     PromoRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ]
 })
 export class PromoModule { }

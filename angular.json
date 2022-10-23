@@ -111,5 +111,7 @@
       }
     }
   },
-  "defaultProject": "ijeni"
+  "cli": {
+    "analytics": "640f59ca-3f0a-4c6f-b30d-2d53d814c58d"
+  }
 }
