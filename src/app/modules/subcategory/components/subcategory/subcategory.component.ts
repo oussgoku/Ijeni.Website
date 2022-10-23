@@ -12,6 +12,7 @@ export class SubcategoryComponent implements OnInit {
   categories = []
   subcategories = []
   categoryId
+  preloader=true;
   constructor(private categoryService: CategoryService, private route: ActivatedRoute) { }
   grid = true
   ngOnInit(): void {
@@ -28,6 +29,9 @@ export class SubcategoryComponent implements OnInit {
         error: (error) => {
           console.log('error while fetching subcategories', error);
   
+        },
+        complete:()=>{
+          this.preloader=false
         }
       })
     })
