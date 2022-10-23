@@ -102,7 +102,8 @@
 								<li><a href="#"><span class="icons"><i
 												class="ti-user"></i></span>{{promo.providerName}}</a>
 								</li>
-								<li><a [routerLink]="['/prestataire',promo.providerId]"><span class="icons"><i class="ti-calendar"></i></span>{{promo.createdDate | date}}</a></li>
+								<li><a [routerLink]="['/prestataire',promo.providerId]"><span class="icons"><i
+												class="ti-calendar"></i></span>{{promo.createdDate | date}}</a></li>
 							</ul>
 						</div>
 						<h2 class="post-title">Description:</h2>
@@ -272,10 +273,13 @@
 				<div class="article_detail_wrapss single_article_wrap format-standard">
 
 					<div class="article_posts_thumb">
-						<span class="img"><img class="img-fluid" [src]="promo.providerPictureURI" alt="{{promo.providerName}}"></span>
+						<ul>
+							<ngb-rating [max]="5" [(rate)]="promo.providerRate" [readonly]="true"
+								style="font-size:25px;"></ngb-rating>
+						</ul>
+						<span class="img"><img class="img-fluid" [src]="promo.providerPictureURI" alt="{{promo.providerName}}" style="height:120px;width:120px;"></span>
 						<h3 class="pa-name">{{promo.providerName}}</h3>
 						<ul>
-							<ngb-rating [max]="5" [(rate)]="promo.rating" [readonly]="true"></ngb-rating>
 						</ul>
 						<!-- <ul class="social-links">
 							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -294,7 +298,7 @@
 					<h4 class="title">Contact Me !</h4>
 					<ul>
 						<li><a>Numéro de téléphone<span>{{promo.providerPhoneNumber}}</span></a></li>
-						<li><a >Adresse <span>{{promo.fullAddress}}</span></a></li>
+						<li><a>Adresse <span>{{promo.fullAddress}}</span></a></li>
 						<!-- <li><a href="#">Fashion <span>19</span></a>
 						</li>
 						<li><a href="#">Branding <span>17</span></a></li>
@@ -316,7 +320,7 @@
 								<span class="post-date" style="color:green;">{{other.regularPrice }} Dt</span>
 							</span>
 						</li>
-						
+
 					</ul>
 				</div>
 

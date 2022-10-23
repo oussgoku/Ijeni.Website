@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
 
-html {
-    height: 100%;
-}
 
 // body {
 //     /*https://doodad.dev/pattern-generator */
@@ -19,21 +16,7 @@ html {
 
 
 
-.ombre-externe {
-    background-color: white;
-    padding: 1rem;
-    -moz-box-shadow: 20px 20px 36px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 20px 20px 36px rgba(0, 0, 0, 0.2);
-    box-shadow: 20px 20px 36px rgba(0, 0, 0, 0.2);
-}
 
-.ombre-interne {
-    padding: 5vw;
-    background-color: white;
-    -webkit-box-shadow: inset 8px 0px 14px -1px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: inset 8px 0px 14px -1px rgba(0, 0, 0, 0.4);
-    box-shadow: inset 8px 0px 14px -1px rgba(0, 0, 0, 0.4);
-}
 
 
 h5 {
