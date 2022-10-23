@@ -6,7 +6,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { PromodetailsComponent } from './components/promodetails/promodetails.component';
 
 
-
 @NgModule({
   declarations: [
     PromosComponent,
