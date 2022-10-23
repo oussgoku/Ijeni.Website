@@ -5,7 +5,7 @@
 			<div class="col-lg-12 col-md-12">
 
 				<div class="breadcrumbs-wrap">
-					<h2 class="mb-0 ft-medium">Let' Start New Design in Adobe Photoshop</h2>
+					<!-- <h2 class="mb-0 ft-medium">Let' Start New Design in Adobe Photoshop</h2> -->
 					<nav class="transparent">
 						<ol class="breadcrumb p-0">
 							<li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -34,24 +34,26 @@
 					<div class="article_body_wrap">
 
 						<div class="article_featured_image">
-							<div class="container my-5">
+							<div class="container ">
 								<div class="ombre-externe">
 									<div class="ombre-interne">
 										<div id="carouselExampleCaptions" class="carousel slide "
 											data-bs-ride="carousel">
 											<div class="carousel-inner">
-												<div class="carousel-item active">
-													<img src="https://nsm09.casimages.com/img/2021/07/21//21072103063525998217500508.jpg"
+												<div class="carousel-item"
+													*ngFor="let image of images; let index=index; let isFirst = first"
+													[ngClass]="{active:isFirst}">
+													<img [src]="image.uri"
 														class="d-block w-100 peinture-ombre-interne-fine" alt="...">
 													<div class="carousel-caption">
 														<h5>
-															First slide
+
 														</h5>
 														<p>
 														</p>
 													</div>
 												</div>
-												<div class="carousel-item">
+												<!-- <div class="carousel-item">
 													<img src="https://nsm09.casimages.com/img/2021/07/21//21072103063625998217500510.jpg"
 														class="d-block w-100" alt="...">
 													<div class="carousel-caption">
@@ -72,7 +74,7 @@
 														<p>
 														</p>
 													</div>
-												</div>
+												</div> -->
 											</div>
 											<button class="carousel-control-prev" type="button"
 												data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -100,8 +102,7 @@
 								<li><a href="#"><span class="icons"><i
 												class="ti-user"></i></span>{{promo.providerName}}</a>
 								</li>
-								<li><a [routerLink]="['/prestataire',promo.providerId]"><span class="icons"><i
-												class="ti-comment-alt"></i></span>{{promo.createdDate | date}}</a></li>
+								<li><a [routerLink]="['/prestataire',promo.providerId]"><span class="icons"><i class="ti-calendar"></i></span>{{promo.createdDate | date}}</a></li>
 							</ul>
 						</div>
 						<h2 class="post-title">Description:</h2>
@@ -111,29 +112,10 @@
 				</div>
 
 				<!-- Author Detail -->
-				<div class="article_detail_wrapss single_article_wrap format-standard">
 
-					<div class="article_posts_thumb">
-						<span class="img"><img class="img-fluid" src="https://via.placeholder.com/500x500"
-								alt=""></span>
-						<h3 class="pa-name">Rosalina William</h3>
-						<ul class="social-links">
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-behance"></i></a></li>
-							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-							<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						</ul>
-						<p class="pa-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-					</div>
-
-				</div>
 
 				<!-- Blog Comment -->
-				<div class="article_detail_wrapss single_article_wrap format-standard">
+				<!-- <div class="article_detail_wrapss single_article_wrap format-standard">
 
 					<div class="comment-area">
 						<div class="all-comments">
@@ -279,7 +261,7 @@
 						</div>
 					</div>
 
-				</div>
+				</div> -->
 
 
 			</div>
@@ -287,82 +269,59 @@
 			<!-- Single blog Grid -->
 			<div class="col-lg-4 col-md-12 col-sm-12 col-12">
 
-				<!-- Searchbard -->
-				<div class="single_widgets widget_search">
-					<h4 class="title">Search</h4>
-					<form action="#" class="sidebar-search-form">
-						<input type="search" name="search" placeholder="Search..">
-						<button type="submit"><i class="ti-search"></i></button>
-					</form>
+				<div class="article_detail_wrapss single_article_wrap format-standard">
+
+					<div class="article_posts_thumb">
+						<span class="img"><img class="img-fluid" [src]="promo.providerPictureURI" alt=""></span>
+						<h3 class="pa-name">{{promo.providerName}}</h3>
+						<ul>
+							<!-- <ngb-rating [max]="5" [(rate)]="promo.rating" [readonly]="false"></ngb-rating> -->
+						</ul>
+						<!-- <ul class="social-links">
+							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fab fa-behance"></i></a></li>
+							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+							<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						</ul> -->
+						<p class="pa-text">{{promo.description}}</p>
+					</div>
+
 				</div>
 
 				<!-- Categories -->
 				<div class="single_widgets widget_category">
-					<h4 class="title">Categories</h4>
+					<h4 class="title">Contact Me !</h4>
 					<ul>
-						<li><a href="#">Lifestyle <span>09</span></a></li>
-						<li><a href="#">Travel <span>12</span></a></li>
-						<li><a href="#">Fashion <span>19</span></a>
+						<li><a>Numéro de téléphone<span>{{promo.providerPhoneNumber}}</span></a></li>
+						<li><a >Adresse <span>{{promo.fullAddress}}</span></a></li>
+						<!-- <li><a href="#">Fashion <span>19</span></a>
 						</li>
 						<li><a href="#">Branding <span>17</span></a></li>
-						<li><a href="#">Music <span>10</span></a></li>
+						<li><a href="#">Music <span>10</span></a></li> -->
 					</ul>
 				</div>
 
 				<!-- Trending Posts -->
 				<div class="single_widgets widget_thumb_post">
-					<h4 class="title">Trending Posts</h4>
-					<ul>
+					<h4 class="title">Other Promos</h4>
+					<ul *ngFor="let other of promo.otherPromos">
 						<li>
 							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
+								<img [src]="other.coverPicture" alt="{{other.promoName}}" class="">
 							</span>
 							<span class="right">
-								<a class="feed-title" href="#">Alonso Kelina Falao Asiano Pero</a>
-								<span class="post-date"><i class="ti-calendar"></i>10 Min ago</span>
+								<a class="feed-title" (click)="ChangeRoute(other.id)">{{other.promoName}}</a>
+								<span class="post-date"><i class="ti-calendar"></i>{{other.createdDate | date}}</span>
+								<span class="post-date" style="color:green;">{{other.regularPrice }} Dt</span>
 							</span>
 						</li>
-						<li>
-							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
-							</span>
-							<span class="right">
-								<a class="feed-title" href="#">It is a long established fact that a reader</a>
-								<span class="post-date"><i class="ti-calendar"></i>2 Hours ago</span>
-							</span>
-						</li>
-						<li>
-							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
-							</span>
-							<span class="right">
-								<a class="feed-title" href="#">Many desktop publish packages and web</a>
-								<span class="post-date"><i class="ti-calendar"></i>4 Hours ago</span>
-							</span>
-						</li>
-						<li>
-							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
-							</span>
-							<span class="right">
-								<a class="feed-title" href="#">Various versions have evolved over the years</a>
-								<span class="post-date"><i class="ti-calendar"></i>7 Hours ago</span>
-							</span>
-						</li>
-						<li>
-							<span class="left">
-								<img src="https://via.placeholder.com/1200x800" alt="" class="">
-							</span>
-							<span class="right">
-								<a class="feed-title" href="#">Photo booth anim 8-bit PBR 3 wolf moon.</a>
-								<span class="post-date"><i class="ti-calendar"></i>3 Days ago</span>
-							</span>
-						</li>
+						
 					</ul>
 				</div>
 
 				<!-- Tags Cloud -->
-				<div class="single_widgets widget_tags">
+				<!-- <div class="single_widgets widget_tags">
 					<h4 class="title">Tags Cloud</h4>
 					<ul>
 						<li><a href="#">Lifestyle</a></li>
@@ -371,7 +330,7 @@
 						<li><a href="#">Branding</a></li>
 						<li><a href="#">Music</a></li>
 					</ul>
-				</div>
+				</div> -->
 
 			</div>
 
