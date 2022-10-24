@@ -8,7 +8,7 @@
 					<!-- <h2 class="mb-0 ft-medium">Let' Start New Design in Adobe Photoshop</h2> -->
 					<nav class="transparent">
 						<ol class="breadcrumb p-0">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a routerLink="/">Home</a></li>
 							<li class="breadcrumb-item active theme-cl" aria-current="page">Blog Detail</li>
 						</ol>
 					</nav>
@@ -273,13 +273,12 @@
 				<div class="article_detail_wrapss single_article_wrap format-standard">
 
 					<div class="article_posts_thumb">
-						<ul>
-							<ngb-rating [max]="5" [(rate)]="promo.providerRate" [readonly]="true"
-								style="font-size:25px;"></ngb-rating>
-						</ul>
+
 						<span class="img"><img class="img-fluid" [src]="promo.providerPictureURI" alt="{{promo.providerName}}" style="height:120px;width:120px;"></span>
 						<h3 class="pa-name">{{promo.providerName}}</h3>
 						<ul>
+							<ngb-rating [max]="5" [(rate)]="promo.providerRate" [readonly]="true"
+								style="font-size:25px;"></ngb-rating>
 						</ul>
 						<!-- <ul class="social-links">
 							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>

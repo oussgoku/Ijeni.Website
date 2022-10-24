@@ -8,7 +8,7 @@ import { CategoryService } from 'src/app/services/category/category.service';
   styleUrls: ['./subcategory.component.scss']
 })
 export class SubcategoryComponent implements OnInit {
-
+  preload=true;
   categories = []
   subcategories = []
   categoryId
@@ -24,10 +24,14 @@ export class SubcategoryComponent implements OnInit {
           this.subcategories = this.categories.filter((categorie) => {
             return categorie.parentId == this.categoryId
           })
+          this.preload=false
         },
         error: (error) => {
           console.log('error while fetching subcategories', error);
   
+        },
+        complete: () => {
+          
         }
       })
     })
