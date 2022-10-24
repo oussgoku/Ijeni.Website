@@ -27,6 +27,8 @@ public provider
     this.providerService.getProviderById(this.id).subscribe({
       next:(result)=>{
        this.provider=result['object'];
+       console.log('provider:',this.provider);
+       
         
       },
       error:(error)=>{
