@@ -7,8 +7,8 @@
 							<h1 class="ft-medium">Browse Resumes</h1>
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="#" class="text-light">Home</a></li>
-									<li class="breadcrumb-item"><a href="#" class="text-light">Job</a></li>
+									<li class="breadcrumb-item"><a  class="text-light">Home</a></li>
+									<li class="breadcrumb-item"><a  class="text-light">Job</a></li>
 									<li class="breadcrumb-item active theme-cl" aria-current="page">Browse Candidates</li>
 								</ol>
 							</nav>
@@ -30,26 +30,17 @@
 						<div class="col-lg-12 col-md-12 col-sm-12">
 							
 							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-12">
+								<div [ngClass]="{'col-lg-3': grid, 'col-lg-12': !grid }"  class="col-xl-12 col-lg-12 col-md-12 col-12" >
 									<div class="row align-items-center justify-content-between mx-0 bg-white rounded py-2 mb-4">
 										<div class="col-xl-3 col-lg-4 col-md-5 col-sm-12">
-											<h6 class="mb-0 ft-medium fs-sm">302 New Jobs Found</h6>
+											<h6 class="mb-0 ft-medium fs-sm">{{promos.length}} Promos disponibles</h6>
 										</div>
 										
 										<div class="col-xl-9 col-lg-8 col-md-7 col-sm-12">
 											<div class="filter_wraps elspo_wrap d-flex align-items-center justify-content-end">
-												<div class="single_fitres mr-2 br-right">
-													<select class="custom-select simple">
-													  <option value="1" selected="">Default Sorting</option>
-													  <option value="2">Recent jobs</option>
-													  <option value="3">Featured jobs</option>
-													  <option value="4">Trending Jobs</option>
-													  <option value="5">Premium jobs</option>
-													</select>
-												</div>
 												<div class="single_fitres">
-													<a href="browse-resumes.html" class="simple-button active theme-cl mr-1"><i class="ti-layout-grid2"></i></a>
-													<a href="browse-resumes-list.html" class="simple-button"><i class="ti-view-list"></i></a>
+													<a [ngClass]="{'activated': grid, 'desactivated': !grid}" class="simple-button active theme-cl mr-1" (click)="change(true)"><i class="ti-layout-grid2"></i></a>
+													<a [ngClass]="{'activated': !grid, 'desactivated': grid}" class="simple-button" (click)="change(false)"><i class="ti-view-list"></i></a>
 												</div>
 											</div>
 										</div>
@@ -60,38 +51,13 @@
 							<!-- row -->
 							<div class="row align-items-center">		
 								<!-- Single -->
-                                <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6" *ngFor="let promo of promos">
+                                <div [ngClass]="{'col-lg-3': grid, 'col-lg-12': !grid }" class="offset-lg-0 col-md-5 offset-md-1 col-sm-6" *ngFor="let promo of promos">
                                     <app-promo-card [promo]="promo" ></app-promo-card>
             
                                 </div>
 
 							</div>
-							<!-- row -->
-							
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12">
-									<ul class="pagination">
-										<li class="page-item">
-										  <a class="page-link" href="#" aria-label="Previous">
-											<span class="fas fa-arrow-circle-right"></span>
-											<span class="sr-only">Previous</span>
-										  </a>
-										</li>
-										<li class="page-item"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item active"><a class="page-link" href="#">3</a></li>
-										<li class="page-item"><a class="page-link" href="#">...</a></li>
-										<li class="page-item"><a class="page-link" href="#">18</a></li>
-										<li class="page-item">
-										  <a class="page-link" href="#" aria-label="Next">
-											<span class="fas fa-arrow-circle-right"></span>
-											<span class="sr-only">Next</span>
-										  </a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							
+
 						</div>
 						
 					</div>

@@ -1,4 +1,5 @@
 <!-- ============================ Page Title Start================================== -->
+<div *ngIf="preload==true" class="preloader"></div>
 <section class="page-title gray">
 	<div class="container">
 		<div class="row">
@@ -296,7 +297,7 @@
 				<div class="single_widgets widget_category">
 					<h4 class="title">Contact Me !</h4>
 					<ul>
-						<li><a>Numéro de téléphone<span>{{promo.providerPhoneNumber}}</span></a></li>
+						<li><a >Numéro de téléphone<span>{{promo.providerPhoneNumber}}</span></a></li>
 						<li><a>Adresse <span>{{promo.fullAddress}}</span></a></li>
 						<!-- <li><a href="#">Fashion <span>19</span></a>
 						</li>
@@ -311,10 +312,10 @@
 					<ul *ngFor="let other of promo.otherPromos">
 						<li>
 							<span class="left">
-								<img [src]="other.coverPicture" alt="{{other.promoName}}" class="">
+								<img  [src]="other.coverPicture" alt="{{other.promoName}}" class="">
 							</span>
 							<span class="right">
-								<a class="feed-title" (click)="ChangeRoute(other.id)">{{other.promoName}}</a>
+								<a class="feed-title" [routerLink]="['/promo',promo.id]"  (click)="ChangeRoute(other.id)">{{other.promoName}}</a>
 								<span class="post-date"><i class="ti-calendar"></i>{{other.createdDate | date}}</span>
 								<span class="post-date" style="color:green;">{{other.regularPrice }} Dt</span>
 							</span>

@@ -31,13 +31,8 @@ export class SubcategoryComponent implements OnInit {
           console.log('error while fetching subcategories', error);
   
         },
-<<<<<<< HEAD
         complete: () => {
-          
-=======
-        complete:()=>{
-          this.preloader=false
->>>>>>> 82038d5dc3f18c1f33c71eb79ec1fc074c32dccb
+          this.preload=false
         }
       })
     })

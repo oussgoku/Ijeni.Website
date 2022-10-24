@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'promo',
     loadChildren: () => import('./modules/promo/promo.module').then(m => m.PromoModule)
   },
+  {
+    path: '**',
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+  },
 ];
 
 @NgModule({

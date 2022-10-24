@@ -9,6 +9,7 @@ import { PromoService } from 'src/app/services/promo/promo.service';
 export class PromosComponent implements OnInit {
   promos = [];
   constructor(private promoService: PromoService) { }
+grid=true;
 
   ngOnInit(): void {
 
@@ -24,5 +25,7 @@ export class PromosComponent implements OnInit {
 
   }
 
-
+  change(state:boolean){
+    this.grid = state
+  }
 }

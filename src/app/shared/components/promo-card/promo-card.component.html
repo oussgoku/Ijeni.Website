@@ -1,5 +1,5 @@
 <!-- Single Item -->
-<div class="blg_grid_box" *ngIf="promo" style="height:400px">
+<div class="blg_grid_box flex" *ngIf="promo" style="height:420px">
     <div class="blg_grid_thumb">
         <a [routerLink]="['/promo',promo.id]"><img [src]="promo.coverPicture" class="img-fluid"
                 style="height:250px" alt="{{promo.promoName}}"></a>

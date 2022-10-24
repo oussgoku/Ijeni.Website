@@ -13,6 +13,7 @@ export class PromodetailsComponent implements OnInit {
 public id:string
 promo
 images
+preload= true;
   constructor(private promoService:PromoService, private activatedRoute:ActivatedRoute, private router:Router, private location:Location) { }
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ images
         this.promo = result['object']
         console.log('promo',this.promo);
         this.images=this.promo['pictures']
-        
+        this.preload=false;
       },
       error:(err)=>{
         console.log('error while fetching promo', err)
