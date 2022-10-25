@@ -31,11 +31,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              "assets/js/jquery.min.js",
+              "assets/js/popper.min.js",
+              "assets/js/bootstrap.min.js",
+              "assets/js/slick.js",
+              "assets/js/slider-bg.js",
+              "assets/js/smoothproducts.js",
+              "assets/js/snackbar.min.js",
+              "assets/js/jQuery.style.switcher.js",
+              "assets/js/custom.js"
+
             ]
           },
           "configurations": {
@@ -102,10 +110,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [             
+            "assets/js/jquery.min.js",
+            "assets/js/popper.min.js",
+            "assets/js/bootstrap.min.js",
+            "assets/js/slick.js",
+            "assets/js/slider-bg.js",
+            "assets/js/smoothproducts.js",
+            "assets/js/snackbar.min.js",
+            "assets/js/jQuery.style.switcher.js",
+            "assets/js/custom.js"
+          ]
           }
         },
         "server": {
