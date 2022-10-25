@@ -10,13 +10,13 @@ export class PromosComponent implements OnInit {
   promos = [];
   constructor(private promoService: PromoService) { }
 grid=true;
-
+preload=true
   ngOnInit(): void {
 
     this.promoService.getLastPromos().subscribe({
       next: (result) => {
         this.promos = result['object']
-  
+        this.preload=false
       },
       error: (error) => {
         console.log('error while getting promos', error)

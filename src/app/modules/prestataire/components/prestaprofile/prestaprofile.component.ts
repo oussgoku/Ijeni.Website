@@ -10,6 +10,8 @@ import { ProviderService } from 'src/app/services/provider/provider.service';
 export class PrestaprofileComponent implements OnInit {
 public id:string=''
 public provider
+profilepicture
+gallerypictures:any[any]=[]
   constructor(private activatedRoute:ActivatedRoute, private providerService:ProviderService) { }
 
   ngOnInit(): void {
@@ -28,6 +30,14 @@ public provider
       next:(result)=>{
        this.provider=result['object'];
        console.log('provider:',this.provider);
+       this.provider.pictures.filter((picture)=>{
+        if(picture.type=="ProfilePicture"){
+          this.profilepicture=picture.uri
+        }else if (picture.type=="Gallery"){
+          this.gallerypictures.push(picture.uri)
+
+        }
+       })
        
         
       },

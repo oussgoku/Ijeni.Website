@@ -4,6 +4,7 @@ import { PrestalistComponent } from './components/prestalist/prestalist.componen
 import { PrestataireRoutingModule } from './prestataire-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PrestaprofileComponent } from './components/prestaprofile/prestaprofile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -15,7 +16,8 @@ import { PrestaprofileComponent } from './components/prestaprofile/prestaprofile
   imports: [
     CommonModule,
     PrestataireRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ]
 })
 export class PrestataireModule { }
