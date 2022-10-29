@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private categoryService: CategoryService, private promoService: PromoService,
     private title: Title, private meta: Meta, private statsService: StatsService) {
   }
+  toDisplay
 
   ngOnInit(): void {
 
@@ -40,10 +41,35 @@ export class HomeComponent implements OnInit {
           return categorie.parentId == null || categorie.parentId == 0
 
         })
+
         this.categoriesDisplayed = this.Parents.slice(0, 12)
       },
       error: (error) => {
         console.log('error while fetching categories', error);
+      },
+      complete: () => {
+
+        let childs: any[any] = []
+        this.toDisplay = this.Parents.map((parent) => {
+
+          childs = []
+          this.Categories.map((category) => {
+            if (category.parentId == parent.id) {
+
+              childs.push(category)
+              return childs
+
+            }
+          })
+          return { parent: parent, categoriesChild: childs }
+        })
+        console.log(this.toDisplay);
+        this.toDisplay = this.toDisplay.filter((item) => {
+          return item.categoriesChild.length == 1
+        })
+
+        console.log('toDisplay',this.toDisplay);
+
       }
     })
 
