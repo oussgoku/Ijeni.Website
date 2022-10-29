@@ -31,9 +31,19 @@
               "src/assets"
             ],
             "styles": [
-              "assets/css/styles.css"
+              "src/assets/css/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/slick.js",
+              "src/assets/js/slider-bg.js",
+              "src/assets/js/smoothproducts.js",
+              "src/assets/js/snackbar.min.js",
+              "src/assets/js/jQuery.style.switcher.js",
+              "src/assets/js/custom.js"
+            ]
           },
           "configurations": {
             "production": {
