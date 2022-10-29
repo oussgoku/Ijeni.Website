@@ -62,8 +62,9 @@
                             <div class="dro_140">
                                 <div class="dro_141 de"><i class="fa fa-journal-whills"></i></div>
                                 <div class="dro_142">
-                                    <h6>21 0000</h6>
-                                    <p>Plus de 21 prestata res de service partout en Tunisie</p>
+                                    <h6>{{stats.totalProviders}} Prestataires</h6>
+                                    <p>Plus de {{stats.totalProviders}} prestataire res de service partout en Tunisie
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -71,8 +72,8 @@
                             <div class="dro_140">
                                 <div class="dro_141 de"><i class="fa fa-business-time"></i></div>
                                 <div class="dro_142">
-                                    <h6>73 000 Clients</h6>
-                                    <p>Plus de 73000 heureux partout en Tunisie</p>
+                                    <h6>{{stats.totalUsers}} Clients</h6>
+                                    <p>Plus de {{stats.totalUsers}} heureux partout en Tunisie</p>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +81,7 @@
                             <div class="dro_140">
                                 <div class="dro_141 de"><i class="fa fa-user-shield"></i></div>
                                 <div class="dro_142">
-                                    <h6>43 000 services livré</h6>
+                                    <h6>{{stats.totalCategories}} services livré</h6>
                                     <p>Services livré a nos cliens en toute simplicité</p>
                                 </div>
                             </div>
@@ -97,31 +98,55 @@
 =            All Category Section            =
 ===========================================-->
 
-<section class=" section">
-    <!-- Container Start -->
+
+<!-- ======================= All category ======================== -->
+<section class="space gray">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Section title -->
-                <div class="section-title">
-                    <h2>All Categories</h2>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, provident!</p> -->
-                </div>
-                <div class="row">
-                    <!-- Category list -->
-                    <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6" *ngFor="let category of Parents">
-                        <app-category-card [category]="category" [routerLink]="['/subcategory']" [queryParams]="{ categoryId: category.id}"></app-category-card>
 
-                    </div>
-                    <!-- Category list -->
+        <div class="row justify-content-center">
 
-
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="sec_title position-relative text-center mb-5">
+                    <h6 class="text-muted mb-0">Popular Categories</h6>
+                    <h2 class="ft-bold">Browse Top Categories</h2>
                 </div>
             </div>
         </div>
+
+        <!-- row -->
+        <div class="row align-items-center">
+
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6" *ngFor="let category of categoriesDisplayed">
+                <div class="cats-wrap text-center">
+                    <a [routerLink]="['/subcategory']" class="cats-box d-block rounded bg-white px-2 py-4">
+                        <div
+                            class="text-center mb-2 mx-auto position-relative d-inline-flex align-items-center justify-content-center p-3 theme-bg-light circle">
+                            <!-- <i class="lni lni-laptop-phone fs-lg theme-cl"></i> -->
+                            <img src="{{category.iconURI}}" alt="{{category.name}}" style="height:60px;">
+                        </div>
+                        <div class="cats-box-caption">
+                            <h4 class="fs-md mb-0 ft-medium m-catrio">{{category?.name}}</h4>
+                            <!-- <span class="text-muted">607 Jobs</span> -->
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- /row -->
+
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="position-relative text-center">
+                    <a href="browse-category.html" class="btn btn-md bg-dark rounded text-light hover-theme">Browse All
+                        Categories<i class="lni lni-arrow-right-circle ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <!-- Container End -->
 </section>
+<!-- ======================= All category ======================== -->
 
 <h3 class="ft-bold mb-1 " style="text-align:center; font-weight: bold;">Engagez les meilleurs <span
         class="theme-cl">Préstataires</span></h3>
@@ -142,31 +167,38 @@
         <!-- row -->
         <div class="row align-items-center">
 
-								<!-- Single -->
-								<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-									<div class="job_grid border rounded ">
-										<div class="position-absolute ab-left"><button type="button" class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray"><i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button></div>
-										<div class="job_grid_thumbmb-2 text-center pt-4 px-3 mb-2">
-											<a class="d-inline-flex text-center m-auto circle border p-2"><img src="https://via.placeholder.com/500x500" class="img-fluid circle" width="70" alt="" /></a>
-										</div>
-										<div class="job_grid_caption text-center pb-3 px-3">
-											<h4 class="mb-0 ft-medium medium"><a class="text-dark fs-md">John K. Surber</a></h4>
-											<div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span></div>
-										</div>
-										<div class="job_grid_footer px-3">
-											<ul class="p-0 skills_tag text-center">
-												<li><span class="px-2 py-1 medium skill-bg rounded text-dark">Joomla</span></li>
-												<li><span class="px-2 py-1 medium skill-bg rounded text-dark">WordPress</span></li>
-												<li><span class="px-2 py-1 medium skill-bg rounded text-dark">PHP</span></li>
-												<li><span class="px-2 py-1 medium skill-bg rounded text-dark">HTML5</span></li>
-												<li><span class="px-2 py-1 medium bg-danger rounded text-light">+3 More</span></li>
-											</ul>
-										</div>
-										<div class="job_grid_footer pb-4 px-3">
-											<div class="df-1 text-dark ft-medium col-12 mt-3"><a class="btn gray apply-btn rounded full-width">View Candidate<i class="lni lni-arrow-right-circle ml-1"></i></a></div>
-										</div>
-									</div>
-								</div>
+            <!-- Single -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="job_grid border rounded ">
+                    <div class="position-absolute ab-left"><button type="button"
+                            class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray"><i
+                                class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button></div>
+                    <div class="job_grid_thumbmb-2 text-center pt-4 px-3 mb-2">
+                        <a class="d-inline-flex text-center m-auto circle border p-2"><img
+                                src="https://via.placeholder.com/500x500" class="img-fluid circle" width="70"
+                                alt="" /></a>
+                    </div>
+                    <div class="job_grid_caption text-center pb-3 px-3">
+                        <h4 class="mb-0 ft-medium medium"><a class="text-dark fs-md">John K. Surber</a></h4>
+                        <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
+                        </div>
+                    </div>
+                    <div class="job_grid_footer px-3">
+                        <ul class="p-0 skills_tag text-center">
+                            <li><span class="px-2 py-1 medium skill-bg rounded text-dark">Joomla</span></li>
+                            <li><span class="px-2 py-1 medium skill-bg rounded text-dark">WordPress</span></li>
+                            <li><span class="px-2 py-1 medium skill-bg rounded text-dark">PHP</span></li>
+                            <li><span class="px-2 py-1 medium skill-bg rounded text-dark">HTML5</span></li>
+                            <li><span class="px-2 py-1 medium bg-danger rounded text-light">+3 More</span></li>
+                        </ul>
+                    </div>
+                    <div class="job_grid_footer pb-4 px-3">
+                        <div class="df-1 text-dark ft-medium col-12 mt-3"><a
+                                class="btn gray apply-btn rounded full-width">View Candidate<i
+                                    class="lni lni-arrow-right-circle ml-1"></i></a></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- row -->
 
@@ -188,17 +220,18 @@
             </div>
         </div>
         <div class="row justify-content-center">
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngFor="let item of lastPromos">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngFor="let item of lastPromos">
 
-            <app-promo-card [promo]="item"></app-promo-card>
+                <app-promo-card [promo]="item"></app-promo-card>
+            </div>
+
         </div>
-
-    </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="position-relative text-center">
-                <a class="btn btn-md bg-dark rounded text-light hover-theme" routerLink="/promo">Browse All Promos<i class="lni lni-arrow-right-circle ml-2"></i></a>
+                <a class="btn btn-md bg-dark rounded text-light hover-theme" routerLink="/promo">Browse All Promos<i
+                        class="lni lni-arrow-right-circle ml-2"></i></a>
             </div>
         </div>
     </div>
@@ -221,10 +254,12 @@
                                 architecto accusantium.</p>
                         </div>
                         <div class="btn-box clearfix mt-5">
-                            <a href="https://apps.apple.com/us/app/ijeni/id1547115034" target="_blank" class="download-btn play-store mb-1 d-inline-flex"><img
-                                    src="assets/img/ios.png" width="200" alt="Ijeni Application on App Store" /></a>
-                            <a href="https://play.google.com/store/apps/details?id=com.ntech.ijeni1" target="_blank" class="download-btn play-store ml-2 mb-1 d-inline-flex"><img
-                                    src="assets/img/and.png" width="200" alt="Ijeni Application on Playstore" /></a>
+                            <a href="https://apps.apple.com/us/app/ijeni/id1547115034" target="_blank"
+                                class="download-btn play-store mb-1 d-inline-flex"><img src="assets/img/ios.png"
+                                    width="200" alt="Ijeni Application on App Store" /></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.ntech.ijeni1" target="_blank"
+                                class="download-btn play-store ml-2 mb-1 d-inline-flex"><img src="assets/img/and.png"
+                                    width="200" alt="Ijeni Application on Playstore" /></a>
                         </div>
                     </div>
                 </div>
