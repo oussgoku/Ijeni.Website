@@ -5225,8 +5225,8 @@ span._user_status.busy {
     background: #ffffff;
     margin-bottom: 30px;
     border-radius: 0.5rem;
-    box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-    -webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
+    /*box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
+    -webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);*/
 }
 
 .blg_grid_caption {

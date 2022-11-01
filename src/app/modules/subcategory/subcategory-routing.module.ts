@@ -6,12 +6,8 @@ import { SubcategoryComponent } from './components/subcategory/subcategory.compo
 const routes: Routes = [
   {
     path: '',
-    component:SubcategoryComponent,
+    component: CategoriesComponent,
   },
-  {
-    path:'categories', 
-    component:CategoriesComponent
-  }
 
 ];
 

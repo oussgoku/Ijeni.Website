@@ -5,7 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LottieModule } from 'ngx-lottie';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
+export function playerFactory(): any {
+  return import('lottie-web');
+}
 @NgModule({
   declarations: [
     AppComponent
@@ -15,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
+    LottieAnimationViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

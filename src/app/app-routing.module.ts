@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./modules/prestataire/prestataire.module').then(m => m.PrestataireModule)
   },
   {
-    path: 'subcategory',
+    path: 'categories',
     loadChildren: () => import('./modules/subcategory/subcategory.module').then(m => m.SubcategoryModule)
   },
   {
@@ -32,8 +32,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     initialNavigation: 'enabledBlocking',
     scrollPositionRestoration: 'enabled'
-    
-})],
+
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

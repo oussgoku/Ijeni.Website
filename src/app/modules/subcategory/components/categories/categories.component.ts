@@ -1,17 +1,37 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { CategoryService } from 'src/app/services/category/category.service';
 import { Category } from 'src/app/shared/models/category';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
   Categories: Category[] = [];
   Parents: Category[] = [];
   toDisplay: any[any]
-  constructor(private categoryService: CategoryService) { }
+  isLoading: boolean = true;
+  preload = true;
+  public lottieConfig: Object;
+  private anim: any;
+  private animationSpeed: number = 1;
+  options: AnimationOptions = {
+    path: "/assets/animations/loader.json"
+  };
+  constructor(private categoryService: CategoryService) {
+    this.lottieConfig = {
+      path: 'assets/pinjump.json',
+      renderer: 'canvas',
+      autoplay: true,
+      loop: true
+    };
+  }
+  onAnimate(animationItem: AnimationItem): void {
+    console.log(animationItem);
+  }
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe({
@@ -22,6 +42,7 @@ export class CategoriesComponent implements OnInit {
           return categorie.parentId == null || categorie.parentId == 0
 
         })
+        this.isLoading = false;
       },
       error: (error) => {
         console.log('error while fetching categories', error);
@@ -42,7 +63,7 @@ export class CategoriesComponent implements OnInit {
           return { parent: parent, categoriesChild: childs }
         })
         console.log(this.toDisplay);
-
+        this.preload = false
       }
     })
 

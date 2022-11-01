@@ -1,4 +1,5 @@
-<section class="middle bg-light">
+<div *ngIf="preload==true" class="preloader"></div>
+<section *ngIf="isLoading==false" class="middle bg-light">
     <div class="container">
 
         <!-- Single Category -->
@@ -11,23 +12,33 @@
             <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
                 <div class="row">
 
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12"  *ngFor="let item of category.categoriesChild">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12"
+                        *ngFor="let item of category.categoriesChild">
                         <div class="d-block full-width px-4 py-4 bg-white rounded mb-3">
-                            <div class="d-block full-width mb-1"><img [src]="item.iconURI" class="img-fluid"
-                                    width="45" alt="" /></div>
-                            <h4 class="ft-medium mb-0 fs-md">{{item.name}}</h4>
+                            <div class="d-block full-width mb-1"><img [src]="item.iconURI" class="img-fluid" width="45"
+                                    alt="" /></div>
+                            <h4 [routerLink]="['/prestataire']"
+                                [queryParams]="{ categoryId: category.categoriesChild[0].id}"
+                                class="ft-medium mb-0 fs-md">{{item.name}}</h4>
                             <p class="mb-3 p-0 lh-1">{{item.name_AR}}</p>
-                            <a href="job-search-v1.html" class="theme-cl ft-medium">Explore Jobs<i
+                            <a [routerLink]="['/prestataire']"
+                                [queryParams]="{ categoryId: category.categoriesChild[0].id}"
+                                class="theme-cl ft-medium">Explore Providers<i
                                     class="lni lni-arrow-right-circle ml-1"></i></a>
                         </div>
                     </div>
 
-                  
+
 
                 </div>
             </div>
         </div>
-       
+
 
     </div>
 </section>
+
+
+
+<!-- <ng-lottie *ngIf="isLoading==true" [options]="options" (animationCreated)="onAnimate($event)">
+</ng-lottie> -->

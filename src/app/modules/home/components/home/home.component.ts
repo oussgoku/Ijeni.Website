@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
 
         })
 
-        this.categoriesDisplayed = this.Parents.slice(0, 12)
+
       },
       error: (error) => {
         console.log('error while fetching categories', error);
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
           return item.categoriesChild.length == 1
         })
 
-        console.log('toDisplay',this.toDisplay);
+        console.log('toDisplay', this.toDisplay);
 
       }
     })
@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit {
       next: (result) => {
         this.lastPromos = result['object']
         this.promoLoaded = true
-
+        console.log(this.lastPromos)
       },
       error: (error) => {
         console.log('error while getting promos', error)
