@@ -1,304 +1,292 @@
-<!-- <div class="preloader"></div>
- -->
-<!-- ============================================================== -->
-<!-- Main wrapper - style you can find in pages.scss -->
-<!-- ============================================================== -->
-<div id="main-wrapper" *ngIf="provider">
-
-    <!-- ============================================================== -->
-    <!-- Top header  -->
-    <!-- ============================================================== -->
-    <div class="clearfix"></div>
-    <!-- ============================================================== -->
-    <!-- Top header  -->
-    <!-- ============================================================== -->
-
-    <!-- ======================= Top Breadcrubms ======================== -->
-    <div class="bg-light py-5">
-        <div class="ht-30"></div>
-        <div class="container">
-            <div class="row">
-                <div class="colxl-12 col-lg-12 col-md-12">
-                    <h1 class="ft-medium">Candidate Detail</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a >Home</a></li>
-                            <li class="breadcrumb-item"><a >Candidates</a></li>
-                            <li class="breadcrumb-item active theme-cl" aria-current="page">Candidates Detail</li>
-                        </ol>
-                    </nav>
-                </div>
+<!-- BEGIN  -->
+<!-- ======================= Top Breadcrubms ======================== -->
+<div class="gray py-3">
+    <div class="container">
+        <div class="row">
+            <div class="colxl-12 col-lg-12 col-md-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a>Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Prestataire Profile</li>
+                    </ol>
+                </nav>
             </div>
         </div>
-        <div class="ht-30"></div>
     </div>
-    <!-- ======================= Top Breadcrubms ======================== -->
-
-    <!-- ======================= Dashboard Detail ======================== -->
-    <section class="middle">
-        <div class="container">
-            <div class="row align-items-start justify-content-between">
-
-                <div class="col-12 col-md-12 col-lg-4 col-xl-4 text-center miliods">
-                    <div class="d-block border rounded mfliud-bot mb-4">
-                        <div class="cdt_author px-2 pt-5 pb-4">
-                            <div class="dash_auth_thumb circle p-1 border d-inline-flex mx-auto mb-2">
-                                <img [src]="profilepicture" class="img-fluid circle" style="height: 200px; width: 200px" alt="{{provider.firstName}} {{provider.lastName}}" />
+</div>
+<!-- ======================= Top Breadcrubms ======================== -->
+<div class="bg-default-2 pt-22 pt-lg-25 pb-13 pb-xxl-32">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xxl-3 col-lg-4 col-md-5 mb-11 mb-lg-0">
+                <div>
+                    <div class="pl-lg-5">
+                        <div class="bg-white shadow-9 rounded-4">
+                            <div class="px-5 py-11 text-center border-bottom border-mercury">
+                                <a class="mb-4" href="/#"><img class="circle-54" src="{{profilepicture}}"
+                                        alt="{{provider.name}}" /></a>
+                                <h4 class="mb-0">
+                                    <a class="text-black-2 font-size-6 font-weight-semibold">{{provider.name}}</a>
+                                </h4>
+                                <p class="mb-8">
+                                    <a class="text-gray font-size-4" href="/#">{{provider.otherServices[0].name_FR}}</a>
+                                </p>
+                                <div class="icon-link d-flex align-items-center justify-content-center flex-wrap">
+                                    <a class="text-smoke circle-32 bg-concrete mr-2 hover-bg-green" href="/#"><i
+                                            class="fab fa-linkedin-in"></i></a><a
+                                        class="text-smoke circle-32 bg-concrete mr-2 hover-bg-green" href="/#"><i
+                                            class="fab fa-facebook-f"></i></a><a
+                                        class="text-smoke circle-32 bg-concrete mr-2 hover-bg-green" href="/#"><i
+                                            class="fab fa-twitter"></i></a><a
+                                        class="text-smoke circle-32 bg-concrete mr-2 hover-bg-green" href="/#"><i
+                                            class="fab fa-dribbble"></i></a><a
+                                        class="text-smoke circle-32 bg-concrete mr-2 hover-bg-green" href="/#"><i
+                                            class="fab fa-behance"></i></a>
+                                </div>
                             </div>
-                            <div class="dash_caption mb-3">
-                                <h4 class="fs-lg ft-medium mb-0 lh-1">{{provider.firstName}}
-                                    {{provider.lastName}}</h4>
-                                <!-- <p class="m-0 p-0">Web Designer</p> -->
-                                <span class="text-muted smalls"><i class="lni lni-map-marker mr-1"></i>{{provider.addresses[0].city}},{{provider.addresses[0].country}}
-                                    </span>
-                            </div>
-                            <div class="jb-list-01-title px-2">
-                                <span *ngFor="let item of provider.otherServices"
-                                    class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">{{item.name}}</span>
-
+                            <div class="px-9 pt-lg-5 pt-9 pt-xl-9 pb-5">
+                                <h5 class="text-black-2 mb-8 font-size-5">Contact Info</h5>
+                                <div class="mb-7">
+                                    <p class="font-size-4 mb-0">Location</p>
+                                    <h5 class="font-size-4 font-weight-semibold mb-0 text-black-2 text-break">
+                                        {{provider.addresses[1].fullAddress}}
+                                    </h5>
+                                </div>
+                                <div class="mb-7">
+                                    <p class="font-size-4 mb-0">E-mail</p>
+                                    <h5 class="font-size-4 font-weight-semibold mb-0">
+                                        <a class="text-black-2 text-break"
+                                            href="mailto:name_ac@gmail.com">name_ac@gmail.com</a>
+                                    </h5>
+                                </div>
+                                <div class="mb-7">
+                                    <p class="font-size-4 mb-0">Phone</p>
+                                    <h5 class="font-size-4 font-weight-semibold mb-0">
+                                        <a class="text-black-2 text-break"
+                                            href="tel:+999565562">{{provider.phoneNumber}}</a>
+                                    </h5>
+                                </div>
+                                <div class="mb-7">
+                                    <p class="font-size-4 mb-0">Website Linked</p>
+                                    <h5 class="font-size-4 font-weight-semibold mb-0">
+                                        <a class="text-break" href="/#">www.nameac.com</a>
+                                    </h5>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="cdt_caps">
-                            <div class="job_grid_footer pb-3 px-3 d-flex align-items-center justify-content-between">
-                                <div class="df-1 text-muted">Quality: <ngb-rating [max]="5" [(rate)]="provider.qualityServiceRate" [readonly]="true"
-                                    style="font-size:25px;"></ngb-rating>
-                                    
-                                    </div>
-                            </div>
-                            <div class="job_grid_footer pb-3 px-3 d-flex align-items-center justify-content-between">
-                                <div class="df-1 text-muted">Ponctual: <ngb-rating [max]="5" [(rate)]="provider.ponctualityRate" [readonly]="true"
-                                    style="font-size:25px;"></ngb-rating></div>
-
-                            </div>
-                            <div class="job_grid_footer pb-3 px-3 d-flex align-items-center justify-content-between">
-                                        <div class="df-1 text-muted">Politness: <ngb-rating [max]="5" [(rate)]="provider.politenessRate" [readonly]="true"
-                                            style="font-size:25px;"></ngb-rating></div>
-                            </div>
-                            <div class="job_grid_footer px-3 d-flex align-items-center justify-content-between">
-                                
-                            </div>
-                        </div>
-                        <div class="cdt_caps">
-                            <div class="job_grid_footer pb-3 px-3 d-flex align-items-center justify-content-between">
-                                <div class="df-1 text-muted">Contact:
-                                    {{provider.phoneNumber}} <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    
-                            </div>
-
-                        </div>
-                        <!-- <div class="cdt_caps py-5 px-3">
-                            <a href="#" class="btn btn-md theme-bg text-light rounded full-width">Download Resume</a>
-                        </div> -->
-
                     </div>
                 </div>
-
-                <div class="col-12 col-md-12 col-lg-8 col-xl-8">
-
-                    <!-- row -->
-                    <div class="row align-items-start">
-
-                        <!-- About -->
-                        <!-- <div class="abt-cdt d-block full-width mb-4">
-                            <h4 class="ft-medium mb-1 fs-md">About Carolyn C. Weldon</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
-                                aliquam quaerat voluptatem.</p>
-                        </div> -->
-
-                        <!-- Hobbies -->
-                        <div class="row">
-                            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0" *ngFor="let gallery of gallerypictures">
-                                <img [src]="gallery"
-                                    class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
-
-                                <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-                                    class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" /> -->
+            </div>
+            <div class="col-xxl-6 col-lg-8 col-md-7 order-2 order-xl-1">
+                <div class="bg-white rounded-4 shadow-9">
+                    <div class="nav border-bottom border-mercury pl-12" role="tablist">
+                        <li class="tab-menu-items nav-item pr-12">
+                            <a href="#" role="tab" data-rb-event-key="one" id="left-tabs-example-tab-one"
+                                aria-controls="left-tabs-example-tabpane-one" aria-selected="true"
+                                class="text-uppercase font-size-3 font-weight-bold text-default-color py-2 px-0 nav-link active">Overview</a>
+                        </li>
+                        <li class="tab-menu-items nav-item pr-12">
+                            <a href="#" role="tab" data-rb-event-key="two" id="left-tabs-example-tab-two"
+                                aria-controls="left-tabs-example-tabpane-two" tabindex="-1" aria-selected="false"
+                                class="text-uppercase font-size-3 font-weight-bold text-default-color py-2 px-0 nav-link">Contact</a>
+                        </li>
+                    </div>
+                    <div class="tab-content">
+                        <div id="left-tabs-example-tabpane-one" aria-labelledby="left-tabs-example-tab-one"
+                            role="tabpanel" aria-hidden="false" class="fade tab-pane active show">
+                            <div class="pr-xl-0 pr-xxl-14 p-5 px-xs-12 pt-3 pb-5">
+                                <h4 class="font-size-6 mb-7 text-black-2 font-weight-semibold">
+                                    About
+                                </h4>
+                                <p class="font-size-4 mb-8">
+                                    {{provider.skillsDescription}}
+                                </p>
                             </div>
-
-                            <!-- <div class="col-lg-4 mb-4 mb-lg-0">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-                                    class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
-
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                    class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
-                            </div>
-
-                            <div class="col-lg-4 mb-4 mb-lg-0">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-                                    class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
-
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-                                    class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
-                            </div> -->
-                        </div>
-                        <!-- Gallery -->
-
-                        <!-- Qualification -->
-                        <!-- <div class="abt-cdt d-block full-width mb-4">
-                            <h4 class="ft-medium mb-1 fs-md">Qualification</h4>
-                            <div class="exslio-list mt-3">
-                                <ul>
-                                    <li>
-                                        <div class="esclio-110 bg-light rounded px-3 py-3">
-                                            <h4 class="mb-0 ft-medium fs-md">High School</h4>
-                                            <div class="esclio-110-info full-width mb-2">
-                                                <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>LBS
-                                                    Academy</span>
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-calendar mr-1"></i>2010</span>
-                                            </div>
-                                            <div class="esclio-110-decs full-width">
-                                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                                    incidunt ut labore et dolore magnam <a href="javascript:void(0);"
-                                                        class="theme-cl">Read More..</a></p>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="esclio-110 bg-light rounded px-3 py-3">
-                                            <h4 class="mb-0 ft-medium fs-md">Inter Medium</h4>
-                                            <div class="esclio-110-info full-width mb-2">
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-graduation mr-1"></i>International Inter
-                                                    College</span>
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-calendar mr-1"></i>2012</span>
-                                            </div>
-                                            <div class="esclio-110-decs full-width">
-                                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                                    incidunt ut labore et dolore magnam <a href="javascript:void(0);"
-                                                        class="theme-cl">Read More..</a></p>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="esclio-110 bg-light rounded px-3 py-3">
-                                            <h4 class="mb-0 ft-medium fs-md">Gradutation</h4>
-                                            <div class="esclio-110-info full-width mb-2">
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-graduation mr-1"></i>Nandani College</span>
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-calendar mr-1"></i>2015</span>
-                                            </div>
-                                            <div class="esclio-110-decs full-width">
-                                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                                    incidunt ut labore et dolore magnam <a href="javascript:void(0);"
-                                                        class="theme-cl">Read More..</a></p>
-                                            </div>
-                                        </div>
+                            <div class="border-top pr-xl-0 pr-xxl-14 p-5 pl-xs-12 pt-3 pb-5">
+                                <h4 class="font-size-6 mb-7 text-black-2 font-weight-semibold">
+                                    Skills
+                                </h4>
+                                <ul class="list-unstyled d-flex align-items-center flex-wrap">
+                                    <li *ngFor="let skill of provider.otherServices">
+                                        <a
+                                            class="bg-polar text-black-2 mr-6 px-7 mt-2 mb-2 font-size-3 rounded-3 min-height-32 d-flex align-items-center">{{skill.name_FR}}</a>
                                     </li>
                                 </ul>
                             </div>
-                        </div> -->
-
-                        <!-- Experience -->
-                        <!-- <div class="abt-cdt d-block full-width mb-4">
-                            <h4 class="ft-medium mb-1 fs-md">Experience</h4>
-                            <div class="exslio-list mt-3">
-                                <ul>
-                                    <li>
-                                        <div class="esclio-110 bg-light rounded px-3 py-3">
-                                            <h4 class="mb-0 ft-medium fs-md">Themezhub Limited</h4>
-                                            <div class="esclio-110-info full-width mb-2">
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-laptop-phone mr-1"></i>Web Designer</span>
-                                                <span class="text-muted mr-2"><i class="lni lni-calendar mr-1"></i>2010
-                                                    - 2012</span>
-                                            </div>
-                                            <div class="esclio-110-decs full-width">
-                                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                                    incidunt ut labore et dolore magnam <a href="javascript:void(0);"
-                                                        class="theme-cl">Read More..</a></p>
+                            <div class="border-top p-5 pl-xs-12 pt-3 pb-5">
+                                <h4 class="font-size-6 mb-7 text-black-2 font-weight-semibold">
+                                    Work Exprerience
+                                </h4>
+                                <div class="w-100">
+                                    <div class="d-flex align-items-center pr-11 mb-9 flex-wrap flex-sm-nowrap">
+                                        <div class="square-72 d-block mr-8 mb-7 mb-sm-0">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAMAAABiM0N1AAAAAXNSR0IB2cksfwAAAZtQTFRFAAAA/1de/lpf/llf/llf/1VV/Vlf/llf/Vpf/1pe/llf/1pe/llg/llf/2No/36D/2dt/8PF//z8/////2tx/+rr/+zs/2tw/1pg/9fY/+fo/3uA/1lf/3t//5KW//j4/291/1th/6uu/5md//Ly/2Fn/11j/6Sn/5yg/+/w/19l/+/v/+zt/6Gk/52h/+7u/15k/6Cj/5yf/+7v/1lg/3p+/5aa/1xi/6Gl/4GF/+Pk/5ic//Dw/4aK//f3/9PV/+fn/6Wp/8nL/2Np//P0/42R/+3u/+Dh/6yu/7/B/6yv/4mN/2Vq/66x/7q8/7W3/5ue/9TV/36C//v8/3R5//v7/2Rp/8rM/8DC/+Lj/6Wo/3F2//7+///+//Hx/2Jo/7W4/8/R/+bn/7i6/4yQ/4eL/4SI/4aL/4uQ/2Vr/2Bm/72//21y//v6/2Bl//79/mtw/9DR/9rb/6ms/8vN//r6/5SY//n5/9DS/2Fm/2pv//X1/4OI/2Jn/9na/290/56h/9nb/25z/32C/Vhg/Vpg/1th/Vhf/llesOcjNQAAAIl0Uk5TAEnN7/8Dhv6DQf1EuOj/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////iIAqnOCIJ0SbAAACvUlEQVR4nO2Y6VPaYBCHo8Zab+VXENKIgmepB3ghivHWWvBAQUVBq7a2Kl4o3ret+mf3DTHgh4QBki/tsB+yu5nZJzv77m4yoSgqKzuHViQ52VkUReW+y1OG4SXvfS6VrxxDpKCQKlIFRBdRxeqAiil1ODSdAWVAGdD/ByopLS1RAVRWrgE05WVKQR+0gE4HaCuUgfQGMB9ZtpKBQa8IZERVNa+rq2BUAjIxMAuWGYxJAagGtXWCVVeLmvRB9Vo0iHYDtPVpgxrxySLals9oTBdU34TVNXg6KuJF4NZFYNKjFYEg68wDkggEifVtCVNKAGpDO59QR2dXV2cHn1I72tIB2bXoJsrRAyI9DmJ2Q2tPA9QLJzmyPg24/n4Omj5ycE70pg4yDWAwWuGhYZoeHorWfRADsu0tCzJihDT1KMaiB2cdwyhp7xH5iZMDseP4QvMjNiH4E9Gh+4pxNkWQC5ybqElMCf4UJsnVzcGVGog1YJrXM/BEU2A9mOH1NAwyKcmAZjEXXYle+OZ5Pe+Dl9cVc5hNCbSARSETP5Z4vQS/4C9iIRXQciDoFawarKzS9OqKuI28wcByCqBvWHu17OvYYNkNrIs9vSYULzkQq8N30f6BwOZmAD9F/xd0kuWWBG0huB2D7sDpxE4seDuIraRBIezGn7rnB/x78Wx3EUoaZNnHQcyxHwKH8ak/wL5FKka6RmEcibb1GJEIjmOr8gjh5GtEn+C0UuibUBgRlyuCcEjwK09xIhkiDdKfgbOd0/SFmcPlFcteXYIzX9D0uY3DmfS7W6azrz2AjyEfD7i55f3bG2LqGB/guZaOkJt+0x1DQgP3xtfn6433AXKDuZPbbPKrln1wPLrf3nA/Oh7kttE/+g2ZAWVAGZAaINV++6j2I6qwQA1OQT5F/VYD9Ici8vT8oozy8vxEUX8BJ+GtiNko4HIAAAAASUVORK5CYII="
+                                                alt="" />
+                                        </div>
+                                        <div class="w-100 mt-n2">
+                                            <h3 class="mb-0">
+                                                <a class="font-size-6 text-black-2 font-weight-semibold" href="/#">Lead
+                                                    Product Designer</a>
+                                            </h3>
+                                            <a class="font-size-4 text-default-color line-height-2"
+                                                href="/#">Airabnb</a>
+                                            <div class="d-flex align-items-center justify-content-md-between flex-wrap">
+                                                <a class="font-size-4 text-gray mr-5" href="/#">Jun 2017 - April 2020- 3
+                                                    years</a><a class="font-size-3 text-gray" href="/#"><span
+                                                        class="mr-2"><img
+                                                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEyIDE1Ij48Zz48Zz48cGF0aCBmaWxsPSIjODI4MjgyIiBkPSJNNiA5YTIuNjY3IDIuNjY3IDAgMSAxIDAtNS4zMzRBMi42NjcgMi42NjcgMCAwIDEgNiA5em0wLTEuMzM0QTEuMzMzIDEuMzMzIDAgMSAwIDYgNWExLjMzMyAxLjMzMyAwIDAgMCAwIDIuNjY2em0wIDcuMTUybC00LjI0My00LjI0MmE2IDYgMCAxIDEgOC40ODYgMHptMC0xLjg4NWwzLjMtMy4zYTQuNjY3IDQuNjY3IDAgMSAwLTYuNiAweiIvPjwvZz48L2c+PC9zdmc+"
+                                                            alt="" /></span>New York, USA</a>
                                             </div>
                                         </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="esclio-110 bg-light rounded px-3 py-3">
-                                            <h4 class="mb-0 ft-medium fs-md">Waft Technology</h4>
-                                            <div class="esclio-110-info full-width mb-2">
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-laptop-phone mr-1"></i>Product Designer</span>
-                                                <span class="text-muted mr-2"><i class="lni lni-calendar mr-1"></i>2012
-                                                    - 2014</span>
-                                            </div>
-                                            <div class="esclio-110-decs full-width">
-                                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                                    incidunt ut labore et dolore magnam <a href="javascript:void(0);"
-                                                        class="theme-cl">Read More..</a></p>
+                                    </div>
+                                </div>
+                                <div class="w-100">
+                                    <div class="d-flex align-items-center pr-11 mb-9 flex-wrap flex-sm-nowrap">
+                                        <div class="square-72 d-block mr-8 mb-7 mb-sm-0">
+                                            <img src="data:image/png;base64,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"
+                                                alt="" />
+                                        </div>
+                                        <div class="w-100 mt-n2">
+                                            <h3 class="mb-0">
+                                                <a class="font-size-6 text-black-2 font-weight-semibold"
+                                                    href="/#">Senior UI/UX Designer</a>
+                                            </h3>
+                                            <a class="font-size-4 text-default-color line-height-2" href="/#">Google
+                                                Inc</a>
+                                            <div class="d-flex align-items-center justify-content-md-between flex-wrap">
+                                                <a class="font-size-3 text-gray mr-5" href="/#">Jun 2017 - April 2020- 3
+                                                    years</a><a class="font-size-3 text-gray" href="/#"><span
+                                                        class="mr-2"><img
+                                                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEyIDE1Ij48Zz48Zz48cGF0aCBmaWxsPSIjODI4MjgyIiBkPSJNNiA5YTIuNjY3IDIuNjY3IDAgMSAxIDAtNS4zMzRBMi42NjcgMi42NjcgMCAwIDEgNiA5em0wLTEuMzM0QTEuMzMzIDEuMzMzIDAgMSAwIDYgNWExLjMzMyAxLjMzMyAwIDAgMCAwIDIuNjY2em0wIDcuMTUybC00LjI0My00LjI0MmE2IDYgMCAxIDEgOC40ODYgMHptMC0xLjg4NWwzLjMtMy4zYTQuNjY3IDQuNjY3IDAgMSAwLTYuNiAweiIvPjwvZz48L2c+PC9zdmc+"
+                                                            alt="" /></span>New York, USA</a>
                                             </div>
                                         </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="esclio-110 bg-light rounded px-3 py-3">
-                                            <h4 class="mb-0 ft-medium fs-md">Swap Designd</h4>
-                                            <div class="esclio-110-info full-width mb-2">
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                                <span class="text-muted mr-2"><i
-                                                        class="lni lni-laptop-phone mr-1"></i>UI/UX Designer</span>
-                                                <span class="text-muted mr-2"><i class="lni lni-calendar mr-1"></i>2015
-                                                    - 2021</span>
-                                            </div>
-                                            <div class="esclio-110-decs full-width">
-                                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora
-                                                    incidunt ut labore et dolore magnam <a href="javascript:void(0);"
-                                                        class="theme-cl">Read More..</a></p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div> -->
-
-                        <!-- Skills -->
-                        <!-- <div class="abt-cdt d-block full-width">
-                            <h4 class="ft-medium mb-1 fs-md">Skills</h4>
-                            <ul class="p-0 skills_tag text-left">
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">Joomla</span></li>
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">WordPress</span></li>
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">Javascript</span></li>
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">PHP</span></li>
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">HTML5</span></li>
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">MS SQL</span></li>
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">SQL Development</span>
-                                </li>
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">Dynamod</span></li>
-                                <li><span class="px-2 py-1 medium skill-bg rounded text-dark">Database</span></li>
-                            </ul>
-                        </div> -->
-
+                            <div class="border-top p-5 pl-xs-12 pb-5">
+                                <h4 class="font-size-6 mb-7 text-black-2 font-weight-semibold">
+                                    Education
+                                </h4>
+                                <div class="w-100">
+                                    <div class="d-flex align-items-center pr-11 mb-9 flex-wrap flex-sm-nowrap">
+                                        <div class="square-72 d-block mr-8 mb-7 mb-sm-0">
+                                            <img src="https://justcamp-gatsby.netlify.app/static/harvard-5855e142a9515683a7515e29c1d54b05.svg"
+                                                alt="" />
+                                        </div>
+                                        <div class="w-100 mt-n2">
+                                            <h3 class="mb-0">
+                                                <a class="font-size-6 text-black-2" href="/#">Masters in Art Design</a>
+                                            </h3>
+                                            <a class="font-size-4 text-default-color line-height-2" href="/#">Harvard
+                                                University</a>
+                                            <div class="d-flex align-items-center justify-content-md-between flex-wrap">
+                                                <a class="font-size-3 text-gray mr-5" href="/#">Jun 2017 - April 2020- 3
+                                                    years</a><a class="font-size-3 text-gray" href="/#"><span
+                                                        class="mr-2"><img
+                                                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEyIDE1Ij48Zz48Zz48cGF0aCBmaWxsPSIjODI4MjgyIiBkPSJNNiA5YTIuNjY3IDIuNjY3IDAgMSAxIDAtNS4zMzRBMi42NjcgMi42NjcgMCAwIDEgNiA5em0wLTEuMzM0QTEuMzMzIDEuMzMzIDAgMSAwIDYgNWExLjMzMyAxLjMzMyAwIDAgMCAwIDIuNjY2em0wIDcuMTUybC00LjI0My00LjI0MmE2IDYgMCAxIDEgOC40ODYgMHptMC0xLjg4NWwzLjMtMy4zYTQuNjY3IDQuNjY3IDAgMSAwLTYuNiAweiIvPjwvZz48L2c+PC9zdmc+"
+                                                            alt="" /></span>Brylin, USA</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100">
+                                    <div class="d-flex align-items-center pr-11 mb-9 flex-wrap flex-sm-nowrap">
+                                        <div class="square-72 d-block mr-8 mb-7 mb-sm-0">
+                                            <img src="https://justcamp-gatsby.netlify.app/static/mit-1a7dba4af1039e105bb51a6280857c87.svg"
+                                                alt="" />
+                                        </div>
+                                        <div class="w-100 mt-n2">
+                                            <h3 class="mb-0">
+                                                <a class="font-size-6 text-black-2" href="/#">Bachelor in Software
+                                                    Engineering
+                                                    <!-- -->
+                                                </a>
+                                            </h3>
+                                            <a class="font-size-4 text-default-color line-height-2" href="/#">Manipal
+                                                Institute of Technology</a>
+                                            <div class="d-flex align-items-center justify-content-md-between flex-wrap">
+                                                <a class="font-size-3 text-gray mr-5" href="/#">Fed 2012 - April 2016 -
+                                                    4 years</a><a class="font-size-3 text-gray" href="/#"><span
+                                                        class="mr-2"><img
+                                                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEyIDE1Ij48Zz48Zz48cGF0aCBmaWxsPSIjODI4MjgyIiBkPSJNNiA5YTIuNjY3IDIuNjY3IDAgMSAxIDAtNS4zMzRBMi42NjcgMi42NjcgMCAwIDEgNiA5em0wLTEuMzM0QTEuMzMzIDEuMzMzIDAgMSAwIDYgNWExLjMzMyAxLjMzMyAwIDAgMCAwIDIuNjY2em0wIDcuMTUybC00LjI0My00LjI0MmE2IDYgMCAxIDEgOC40ODYgMHptMC0xLjg4NWwzLjMtMy4zYTQuNjY3IDQuNjY3IDAgMSAwLTYuNiAweiIvPjwvZz48L2c+PC9zdmc+"
+                                                            alt="" /></span>New York, USA</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="left-tabs-example-tabpane-two" aria-labelledby="left-tabs-example-tab-two"
+                            role="tabpanel" aria-hidden="true" class="fade tab-pane">
+                            <div class="pr-xl-11 p-5 pl-xs-12 pt-9 pb-11">
+                                <form action="/">
+                                    <div class="row">
+                                        <div class="col-12 mb-7">
+                                            <label for="name3"
+                                                class="font-size-4 font-weight-semibold text-black-2 mb-5 line-height-reset">Your
+                                                Name</label><input type="text" id="name3" class="form-control"
+                                                placeholder="Jhon Doe" />
+                                        </div>
+                                        <div class="col-lg-6 mb-7">
+                                            <label for="email3"
+                                                class="font-size-4 font-weight-semibold text-black-2 mb-5 line-height-reset">E-mail</label><input
+                                                type="email" id="email3" class="form-control"
+                                                placeholder="example@gmail.com" />
+                                        </div>
+                                        <div class="col-lg-6 mb-7">
+                                            <label for="subject3"
+                                                class="font-size-4 font-weight-semibold text-black-2 mb-5 line-height-reset">Subject</label><input
+                                                type="text" id="subject3" class="form-control"
+                                                placeholder="Special contract" />
+                                        </div>
+                                        <div class="col-lg-12 mb-7">
+                                            <label for="message3"
+                                                class="font-size-4 font-weight-semibold text-black-2 mb-5 line-height-reset">Message</label><textarea
+                                                name="message" id="message3" placeholder="Type your message"
+                                                class="form-control h-px-144"></textarea>
+                                        </div>
+                                        <div class="col-lg-12 pt-4">
+                                            <button class="btn btn-primary text-uppercase w-100 h-px-48">
+                                                Send Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <!-- row -->
-
                 </div>
+            </div>
+            <div class="col-xxl-3 col-md-4 offset-xxl-0 offset-lg-4 offset-md-5 order-3 order-xl-2 mt-xxl-0 mt-md-12">
+                <div class="pl-lg-5 pt-9">
+                    <h4 class="font-size-6 font-weight-semibold mb-0">
+                        Other experts
+                    </h4>
+                    <ul class="list-unstyled">
+                        <li class="border-bottom" *ngFor="let expert of otherExperts">
+                            <a class="media align-items-center py-9 flex-wrap" routerLink="/prestataire/{{expert.id}}">
+                                <div class="mr-7">
+                                    <img class="square-72 rounded-3" src="{{expert.pictureURI}}"
+                                        alt="{{expert.name}}" />
+                                </div>
+                                <div class="">
+                                    <h4 class="mb-0 font-size-5 font-weight-semibold">
+                                        {{expert.name}}
+                                    </h4>
+                                    <p class="mb-0 font-size-3 heading-default-color">
+                                        {{provider.otherServices[0].name_FR}}
+                                    </p>
+                                    <span class="font-size-3 text-smoke"><img class="mr-2"
+                                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEyIDE1Ij48Zz48Zz48cGF0aCBmaWxsPSIjODI4MjgyIiBkPSJNNiA5YTIuNjY3IDIuNjY3IDAgMSAxIDAtNS4zMzRBMi42NjcgMi42NjcgMCAwIDEgNiA5em0wLTEuMzM0QTEuMzMzIDEuMzMzIDAgMSAwIDYgNWExLjMzMyAxLjMzMyAwIDAgMCAwIDIuNjY2em0wIDcuMTUybC00LjI0My00LjI0MmE2IDYgMCAxIDEgOC40ODYgMHptMC0xLjg4NWwzLjMtMy4zYTQuNjY3IDQuNjY3IDAgMSAwLTYuNiAweiIvPjwvZz48L2c+PC9zdmc+"
+                                            alt="" />New York, USA</span>
+                                </div>
+                            </a>
+                        </li>
 
+                    </ul>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- ======================= Dashboard Detail End ======================== -->
-
-    <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
-
-
+    </div>
 </div>
