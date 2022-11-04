@@ -1,16 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category/category.service';
 import { Category } from 'src/app/shared/models/category';
+import { AnimationOptions, LottieComponent } from 'ngx-lottie';
+import { AnimationItem } from 'ngx-lottie/lib/symbols';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
+
+
 })
 export class CategoriesComponent implements OnInit {
   Categories: Category[] = [];
   Parents: Category[] = [];
   toDisplay: any[any]
+  options: AnimationOptions = {
+    path: '../../../../../assets/loader.json',
+  };
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
@@ -52,6 +59,9 @@ export class CategoriesComponent implements OnInit {
 
     console.log('to Display: ', this.toDisplay);
 
+  }
+  onAnimate(animationItem: AnimationItem): void {    
+    console.log(animationItem);  
   }
 
 }
