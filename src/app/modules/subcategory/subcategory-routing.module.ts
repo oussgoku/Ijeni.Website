@@ -11,12 +11,8 @@ export function playerFactory(): any {
 const routes: Routes = [
   {
     path: '',
-    component: SubcategoryComponent,
+    component: CategoriesComponent,
   },
-  {
-    path: 'categories',
-    component: CategoriesComponent
-  }
 
 ];
 

@@ -31,19 +31,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/styles.css"
+              "src/assets/css/styles.css",
+              "src/assets/css/main-style.css"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
               "src/assets/js/popper.min.js",
-              "src/assets/js/bootstrap.min.js",
               "src/assets/js/slick.js",
               "src/assets/js/slider-bg.js",
               "src/assets/js/smoothproducts.js",
               "src/assets/js/snackbar.min.js",
               "src/assets/js/jQuery.style.switcher.js",
-              "src/assets/js/custom.js"
-
+              "src/assets/js/custom.js",
+              "src/assets/js/plugin.js",
+              "src/assets/js/main.js",
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/jquery-3.6.0.min.js"
             ]
           },
           "configurations": {
@@ -104,16 +107,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "css",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "assets/css/styles.css"
             ],
-            "scripts": [             
-          ]
+            "scripts": []
           }
         },
         "server": {
@@ -122,7 +124,7 @@
             "outputPath": "dist/ijeni/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
+            "inlineStyleLanguage": "css"
           },
           "configurations": {
             "production": {
