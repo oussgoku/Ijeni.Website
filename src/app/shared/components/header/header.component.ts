@@ -17,13 +17,9 @@ export class HeaderComponent implements OnInit {
       "assets/js/jquery.min.js",
       "assets/css/slick.js",
       "assets/js/popper.min.js",
-      "assets/css/slider.js",
-      "assets/css/slider-bg.js",
-      "assets/css/smoothproducts.js",
-      "assets/css/snackbar.min.js",
+     
       "assets/css/plugins",
       "assets/css/style.css",
-      "assets/js",
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');
