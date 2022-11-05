@@ -31,7 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/styles.css"
+              "src/assets/css/styles.css",
+              "src/assets/css/main-style.css"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
@@ -41,7 +42,11 @@
               "src/assets/js/smoothproducts.js",
               "src/assets/js/snackbar.min.js",
               "src/assets/js/jQuery.style.switcher.js",
-              "src/assets/js/custom.js"
+              "src/assets/js/custom.js",
+              "src/assets/js/plugin.js",
+              "src/assets/js/main.js",
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/jquery-3.6.0.min.js"
             ]
           },
           "configurations": {
