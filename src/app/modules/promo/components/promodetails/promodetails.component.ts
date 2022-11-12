@@ -19,11 +19,11 @@ export class PromodetailsComponent implements OnInit {
 
     // This array contains all the files/CDNs
     const dynamicScripts = [
-      'assets/js/bootstrap.js',
       "assets/js/jquery-3.6.0.min.js",
+      'assets/js/bootstrap.js',
       "assets/js/main.js",
       "assets/js/plugin.js",
-      "assets/css/bootstrap.css",
+      //"assets/css/bootstrap.css",
       "assets/js/popper.min.js",
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
