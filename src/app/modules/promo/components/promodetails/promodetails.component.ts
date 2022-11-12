@@ -23,7 +23,7 @@ export class PromodetailsComponent implements OnInit {
       'assets/js/bootstrap.js',
       "assets/js/main.js",
       "assets/js/plugin.js",
-      //"assets/css/bootstrap.css",
+      "assets/css/bootstrap.css",
       "assets/js/popper.min.js",
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {

@@ -30,7 +30,7 @@
 								<img [src]="image.uri" class="img-fluid" alt="image">
 							</a>
 						</div>
-						
+
 					</div>
 					<!-- Nav -->
 					<div class="thumb-wrap">
@@ -41,13 +41,13 @@
 							data-prevArrow='<div class="prev-icon"><i class="las la-angle-left"></i></div>'
 							data-nextArrow='<div class="next-icon"><i class="las la-angle-right"></i></div>'
 							data-responsive='[{"breakpoint": 1800,"settings": {"slidesToShow": 6}},{"breakpoint": 1600,"settings": {"slidesToShow": 6}},{"breakpoint": 1400,"settings": {"slidesToShow": 6}},{"breakpoint": 1200,"settings": {"slidesToShow": 6}},{"breakpoint": 991,"settings": {"slidesToShow": 6}},{"breakpoint": 768, "settings": {"slidesToShow": 4}},{"breakpoint": 576, "settings": {"slidesToShow": 4}}]'>
-							
+
 							<div class="single-thumb" *ngFor="let image of images">
 								<a class="thumb-link" data-toggle="tab" href="#image-02">
 									<img [src]="image.uri" alt="thumb">
 								</a>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
@@ -55,20 +55,20 @@
 				<div class="proDescription">
 					<!-- Top -->
 					<div class="descriptionTop">
-						<h4><a href="add_details.html" class="detailsTittle">{{promo.promoName}}</a></h4>
+						<h4><a href="add_details.html" class="detailsTittle">{{promo?.promoName}}</a></h4>
 						<p class="detailsCap">{{promo.createdDate | date}}</p>
 						<span class="detailsPricing">{{promo.regularPrice}} DT</span>
-						
+
 					</div>
 					<!-- Mid -->
 					<div class="descriptionMid">
 						<h4 class="priceTittle">Description</h4>
 						<ul class="listing">
 							<li class="listItem"><i class="las la-check icon"></i>{{promo.description}}</li>
-							
-							
+
+
 						</ul>
-						
+
 					</div>
 					<!-- Footer -->
 					<div class="descriptionFooter">
@@ -124,8 +124,10 @@
 								<img [src]="other.coverPicture" alt="images" style="height:150px;width:165px">
 							</div>
 							<div class="recentCaption">
-								<h5><a [routerLink]="['/promo',other.id]" class="featureTittle">{{other.promoName}}</a></h5>
-								<p class="featureCap">{{other.fullAddress}} <strong class="subCap">{{other.createdDate | date }}</strong>
+								<h5><a [routerLink]="['/promo',other.id]" class="featureTittle">{{other.promoName}}</a>
+								</h5>
+								<p class="featureCap">{{other.fullAddress}} <strong class="subCap">{{other.createdDate |
+										date }}</strong>
 								</p>
 								<span class="featurePricing">$124.80</span>
 								<!-- <div class="btn-wrapper">
@@ -135,7 +137,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 				</section>
 			</div>
 		</div>
